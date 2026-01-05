@@ -4,6 +4,7 @@
   "description": "Enterprise web components based on Ant Design principles. Framework-agnostic, accessible, and built with Lit.",
   "repository": "https://github.com/valostra-digital/meridian-ux.git",
   "license": "MIT",
+  "private": true,
   "keywords": [
     "web-components",
     "lit",
@@ -17,7 +18,12 @@
   "engines": {
     "node": ">= 24.12.0"
   },
-  "scripts": {},
+  "scripts": {
+    "dev": "yarn workspace @meridian-ux/components dev",
+    "build": "yarn workspace @meridian-ux/components build",
+    "build:docs": "yarn workspace @meridian-ux/components build:docs",
+    "docs:serve": "python3 -m http.server 8000"
+  },
   "dependencies": {},
   "devDependencies": {}
 }
