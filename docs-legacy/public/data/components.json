@@ -1,0 +1,4177 @@
+{
+  "mx-affix": {
+    "tag": "mx-affix",
+    "name": "Affix",
+    "category": "Navigation",
+    "path": "/components/mx-affix.html",
+    "description": "Affix component that fixes content to viewport when scrolling. <mx-affix offset-top=\"10\">   <mx-button>Fixed Button</mx-button> </mx-affix> ```",
+    "element": "mx-affix",
+    "properties": [
+      {
+        "name": "offset-top",
+        "type": "number",
+        "description": "Offset from top of viewport (px)"
+      },
+      {
+        "name": "offset-bottom",
+        "type": "number",
+        "description": "Offset from bottom of viewport (px)"
+      },
+      {
+        "name": "target",
+        "type": "string",
+        "description": "Scrolling container selector (defaults to window)",
+        "default": "''"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when affix state changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Content to affix"
+      }
+    ],
+    "examples": []
+  },
+  "mx-alert": {
+    "tag": "mx-alert",
+    "name": "Alert",
+    "category": "Feedback",
+    "path": "/components/mx-alert.html",
+    "description": "Alert component for displaying important messages. <!-- Success alert --> <mx-alert type=\"success\" message=\"Success Text\"></mx-alert> <!-- With description --> <mx-alert   type=\"info\"   message=\"Info Text\"   description=\"Detailed info description\"   show-icon ></mx-alert> <!-- Closable --> <mx-alert   type=\"warning\"   message=\"Warning\"   closable ></mx-alert> <!-- Banner mode --> <mx-alert   type=\"error\"   message=\"Error\"   banner ></mx-alert> ```",
+    "element": "mx-alert",
+    "properties": [
+      {
+        "name": "type",
+        "type": "AlertType",
+        "description": "Type of alert: success, info, warning, error",
+        "default": "'info'"
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "description": "Alert message text",
+        "default": "''"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Additional description text",
+        "default": "''"
+      },
+      {
+        "name": "closable",
+        "type": "boolean",
+        "description": "Whether alert can be closed",
+        "default": "false"
+      },
+      {
+        "name": "show-icon",
+        "type": "boolean",
+        "description": "Whether to show type icon"
+      },
+      {
+        "name": "banner",
+        "type": "boolean",
+        "description": "Display as banner (full width, no border)",
+        "default": "false"
+      },
+      {
+        "name": "close-text",
+        "type": "string",
+        "description": "Custom close button text"
+      }
+    ],
+    "events": [
+      {
+        "name": "close",
+        "description": "Dispatched when alert is closed"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default message content (overrides message property)"
+      },
+      {
+        "name": "description",
+        "description": "Description content (overrides description property)"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon"
+      },
+      {
+        "name": "action",
+        "description": "Extra action button area"
+      },
+      {
+        "name": "close-icon",
+        "description": "Custom close icon"
+      }
+    ],
+    "examples": []
+  },
+  "mx-anchor-link": {
+    "tag": "mx-anchor-link",
+    "name": "Anchor",
+    "category": "Navigation",
+    "path": "/components/mx-anchor-link.html",
+    "description": "Anchor link component for individual navigation items. <mx-anchor-link href=\"#section1\" label=\"Section 1\"></mx-anchor-link> <mx-anchor-link href=\"#section2\" label=\"Section 2\">   <mx-anchor-link href=\"#section2-1\" label=\"Sub Section 2.1\"></mx-anchor-link> </mx-anchor-link> ```",
+    "element": "mx-anchor-link",
+    "properties": [
+      {
+        "name": "href",
+        "type": "string",
+        "description": "Target section id (with #)",
+        "default": "''"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "description": "Link text label",
+        "default": "''"
+      },
+      {
+        "name": "active",
+        "type": "boolean",
+        "description": "Whether this link is currently active",
+        "default": "false"
+      }
+    ],
+    "events": [
+      {
+        "name": "click",
+        "description": "Fired when link is clicked"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Nested anchor links"
+      }
+    ],
+    "examples": []
+  },
+  "mx-anchor": {
+    "tag": "mx-anchor",
+    "name": "Anchor",
+    "category": "Navigation",
+    "path": "/components/mx-anchor.html",
+    "description": "Anchor component for navigation between page sections. <mx-anchor>   <mx-anchor-link href=\"#section1\" label=\"Section 1\"></mx-anchor-link>   <mx-anchor-link href=\"#section2\" label=\"Section 2\"></mx-anchor-link> </mx-anchor> ```",
+    "element": "mx-anchor",
+    "properties": [
+      {
+        "name": "target-offset",
+        "type": "string",
+        "description": "Offset from top when scrolling to target (px)"
+      },
+      {
+        "name": "direction",
+        "type": "AnchorDirection",
+        "description": "Direction of anchor links: vertical, horizontal",
+        "default": "'vertical'"
+      },
+      {
+        "name": "affix",
+        "type": "boolean",
+        "description": "Whether to fix the anchor when scrolling",
+        "default": "false"
+      },
+      {
+        "name": "current",
+        "type": "string",
+        "description": "Current active link href",
+        "default": "''"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when active link changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Anchor link items (mx-anchor-link)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-app": {
+    "tag": "mx-app",
+    "name": "App",
+    "category": "Other",
+    "path": "/components/mx-app.html",
+    "description": "App wrapper component for providing application-level configuration. <mx-app theme=\"dark\" locale=\"en-US\">   <your-app-content></your-app-content> </mx-app> ```",
+    "element": "mx-app",
+    "properties": [
+      {
+        "name": "theme",
+        "type": "string",
+        "description": "Theme mode: light, dark, auto",
+        "default": "'light'"
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "description": "Locale for internationalization",
+        "default": "'en-US'"
+      },
+      {
+        "name": "direction",
+        "type": "string",
+        "description": "Text direction: ltr, rtl",
+        "default": "'ltr'"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Application content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-auto-complete": {
+    "tag": "mx-auto-complete",
+    "name": "Auto Complete",
+    "category": "Data Entry",
+    "path": "/components/mx-auto-complete.html",
+    "description": "AutoComplete component for input with suggestions. <mx-auto-complete   placeholder=\"Search...\"   options='[{\"value\":\"apple\"},{\"value\":\"banana\"}]' ></mx-auto-complete> ```",
+    "element": "mx-auto-complete",
+    "properties": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Current input value",
+        "default": "''"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder text",
+        "default": "''"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Whether the input is disabled",
+        "default": "false"
+      },
+      {
+        "name": "size",
+        "type": "string",
+        "description": "Size: large, default, small",
+        "default": "'default'"
+      },
+      {
+        "name": "options",
+        "type": "string",
+        "description": "JSON string of options array",
+        "default": "'[]'"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether dropdown is open",
+        "default": "false"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when value changes"
+      },
+      {
+        "name": "select",
+        "description": "Fired when option is selected"
+      },
+      {
+        "name": "search",
+        "description": "Fired when searching"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-avatar": {
+    "tag": "mx-avatar",
+    "name": "Avatar",
+    "category": "Data Display",
+    "path": "/components/mx-avatar.html",
+    "description": "Avatar component for displaying user profile pictures or icons. <!-- Image avatar --> <mx-avatar src=\"user.jpg\" alt=\"User\"></mx-avatar> <!-- Text avatar --> <mx-avatar>JD</mx-avatar> <!-- Icon avatar --> <mx-avatar icon=\"user\"></mx-avatar> <!-- Different sizes --> <mx-avatar size=\"large\" src=\"user.jpg\"></mx-avatar> <mx-avatar size=\"64\" src=\"user.jpg\"></mx-avatar> <!-- Square shape --> <mx-avatar shape=\"square\" src=\"user.jpg\"></mx-avatar> ```",
+    "element": "mx-avatar",
+    "properties": [
+      {
+        "name": "shape",
+        "type": "AvatarShape",
+        "description": "Shape of avatar: circle, square",
+        "default": "'circle'"
+      },
+      {
+        "name": "size",
+        "type": "AvatarSize",
+        "description": "Size: large (40px), default (32px), small (24px), or number",
+        "default": "'default'"
+      },
+      {
+        "name": "src",
+        "type": "string",
+        "description": "Image source URL",
+        "default": "''"
+      },
+      {
+        "name": "srcset",
+        "type": "string",
+        "description": "Responsive image sources",
+        "default": "''"
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "description": "Alt text for image",
+        "default": "''"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "description": "Icon to display",
+        "default": "''"
+      },
+      {
+        "name": "gap",
+        "type": "string",
+        "description": "Gap between text and border (for text avatars)",
+        "default": "4"
+      }
+    ],
+    "events": [
+      {
+        "name": "error",
+        "description": "Dispatched when image fails to load"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default content (text or custom content)"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-back-top": {
+    "tag": "mx-back-top",
+    "name": "Back Top",
+    "category": "Navigation",
+    "path": "/components/mx-back-top.html",
+    "description": "Back to top button that scrolls to top when clicked. <mx-back-top visibility-height=\"300\"></mx-back-top> <mx-back-top>   <div>Top</div> </mx-back-top> ```",
+    "element": "mx-back-top",
+    "properties": [
+      {
+        "name": "visibility-height",
+        "type": "number",
+        "description": "Height threshold to show button (default 400px)"
+      },
+      {
+        "name": "target",
+        "type": "string",
+        "description": "Scrolling container selector (defaults to window)",
+        "default": "''"
+      },
+      {
+        "name": "duration",
+        "type": "number",
+        "description": "Scroll animation duration in ms (default 450)",
+        "default": "450"
+      }
+    ],
+    "events": [
+      {
+        "name": "click",
+        "description": "Fired when button is clicked"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom button content (default: up arrow icon)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-badge": {
+    "tag": "mx-badge",
+    "name": "Badge",
+    "category": "Data Display",
+    "path": "/components/mx-badge.html",
+    "description": "Badge component for displaying status or count. <!-- Count badge --> <mx-badge count=\"5\">   <button>Notifications</button> </mx-badge> <!-- Dot badge --> <mx-badge dot>   <mx-icon name=\"notification\"></mx-icon> </mx-badge> <!-- Status badge --> <mx-badge status=\"success\" text=\"Success\"></mx-badge> <!-- Overflow --> <mx-badge count=\"100\" overflow-count=\"99\">   <button>Messages</button> </mx-badge> ```",
+    "element": "mx-badge",
+    "properties": [
+      {
+        "name": "count",
+        "type": "number|string",
+        "description": "Number to show in badge"
+      },
+      {
+        "name": "dot",
+        "type": "boolean",
+        "description": "Whether to show a dot instead of count",
+        "default": "false"
+      },
+      {
+        "name": "overflow-count",
+        "type": "number",
+        "description": "Max count to show (shows count+ when exceeded)"
+      },
+      {
+        "name": "show-zero",
+        "type": "boolean",
+        "description": "Whether to show badge when count is zero"
+      },
+      {
+        "name": "status",
+        "type": "BadgeStatus",
+        "description": "Status type: success, processing, default, error, warning"
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "description": "Text to display next to status dot",
+        "default": "''"
+      },
+      {
+        "name": "color",
+        "type": "string",
+        "description": "Custom badge color",
+        "default": "''"
+      },
+      {
+        "name": "size",
+        "type": "BadgeSize",
+        "description": "Size of badge: default, small",
+        "default": "'default'"
+      },
+      {
+        "name": "offset-x",
+        "type": "number",
+        "description": "Horizontal offset in pixels"
+      },
+      {
+        "name": "offset-y",
+        "type": "number",
+        "description": "Vertical offset in pixels"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Wrapped element to attach badge to"
+      },
+      {
+        "name": "count",
+        "description": "Custom badge content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-breadcrumb-item": {
+    "tag": "mx-breadcrumb-item",
+    "name": "Breadcrumb",
+    "category": "Navigation",
+    "path": "/components/mx-breadcrumb-item.html",
+    "description": "Breadcrumb Item component",
+    "element": "mx-breadcrumb-item",
+    "properties": [],
+    "events": [
+      {
+        "name": "click",
+        "description": "Dispatched when the item is clicked"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Link text content"
+      },
+      {
+        "name": "separator",
+        "description": "Custom separator icon/content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-breadcrumb": {
+    "tag": "mx-breadcrumb",
+    "name": "Breadcrumb",
+    "category": "Navigation",
+    "path": "/components/mx-breadcrumb.html",
+    "description": "Breadcrumb component - Display the current page path",
+    "element": "mx-breadcrumb",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Breadcrumb items (mx-breadcrumb-item)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-button": {
+    "tag": "mx-button",
+    "name": "Button",
+    "category": "General",
+    "path": "/components/mx-button.html",
+    "description": "Button component for triggering operations. <!-- Primary button --> <mx-button type=\"primary\">Primary</mx-button> <!-- Button with icon --> <mx-button>   <mx-icon slot=\"icon\" svg=\"...\"></mx-icon>   Button with Icon </mx-button> <!-- Loading button --> <mx-button loading>Loading</mx-button> <!-- Danger button --> <mx-button danger type=\"primary\">Delete</mx-button> <!-- Link button --> <mx-button type=\"link\" href=\"https://example.com\">Link</mx-button> ```",
+    "element": "mx-button",
+    "properties": [
+      {
+        "name": "type",
+        "type": "ButtonType",
+        "description": "Button type: default, primary, dashed, text, link",
+        "default": "'default'"
+      },
+      {
+        "name": "variant",
+        "type": "ButtonVariant",
+        "description": "Button variant: outlined, solid, dashed, filled, text, link"
+      },
+      {
+        "name": "color",
+        "type": "ButtonColor",
+        "description": "Button color (supports preset colors)"
+      },
+      {
+        "name": "size",
+        "type": "ButtonSize",
+        "description": "Button size: small, middle, large",
+        "default": "'middle'"
+      },
+      {
+        "name": "shape",
+        "type": "ButtonShape",
+        "description": "Button shape: default, circle, round",
+        "default": "'default'"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Whether the button is disabled",
+        "default": "false"
+      },
+      {
+        "name": "danger",
+        "type": "boolean",
+        "description": "Set danger status",
+        "default": "false"
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "description": "Show loading state",
+        "default": "false"
+      },
+      {
+        "name": "ghost",
+        "type": "boolean",
+        "description": "Make background transparent",
+        "default": "false"
+      },
+      {
+        "name": "block",
+        "type": "boolean",
+        "description": "Fit button width to its parent width",
+        "default": "false"
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "description": "Link URL (for link buttons)",
+        "default": "''"
+      },
+      {
+        "name": "target",
+        "type": "string",
+        "description": "Link target",
+        "default": "''"
+      },
+      {
+        "name": "icon-placement",
+        "type": "IconPosition",
+        "description": "Icon position: start or end"
+      }
+    ],
+    "events": [
+      {
+        "name": "click",
+        "description": "Fired when button is clicked"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default slot for button content"
+      },
+      {
+        "name": "icon",
+        "description": "Icon slot"
+      }
+    ],
+    "examples": []
+  },
+  "mx-card": {
+    "tag": "mx-card",
+    "name": "Card",
+    "category": "Data Display",
+    "path": "/components/mx-card.html",
+    "description": "Card component for displaying content in a container. <!-- Simple card --> <mx-card title=\"Card Title\">   Card content </mx-card> <!-- With cover image --> <mx-card>   <img slot=\"cover\" src=\"...\" alt=\"cover\">   <h3>Card Title</h3>   <p>Card content</p> </mx-card> <!-- With actions --> <mx-card title=\"Card\">   <p>Content</p>   <div slot=\"actions\">     <button>Action 1</button>     <button>Action 2</button>   </div> </mx-card> <!-- Hoverable --> <mx-card hoverable>   Content </mx-card> ```",
+    "element": "mx-card",
+    "properties": [
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Card title",
+        "default": "''"
+      },
+      {
+        "name": "bordered",
+        "type": "boolean",
+        "description": "Whether card has border",
+        "default": "true"
+      },
+      {
+        "name": "hoverable",
+        "type": "boolean",
+        "description": "Whether card is hoverable with lift effect",
+        "default": "false"
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "description": "Whether card is in loading state",
+        "default": "false"
+      },
+      {
+        "name": "size",
+        "type": "CardSize",
+        "description": "Size of card: default, small",
+        "default": "'default'"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default content area"
+      },
+      {
+        "name": "title",
+        "description": "Custom title content (overrides title property)"
+      },
+      {
+        "name": "extra",
+        "description": "Extra content in the header (right side)"
+      },
+      {
+        "name": "cover",
+        "description": "Cover image or media"
+      },
+      {
+        "name": "actions",
+        "description": "Action buttons at the bottom"
+      }
+    ],
+    "examples": []
+  },
+  "mx-carousel": {
+    "tag": "mx-carousel",
+    "name": "Carousel",
+    "category": "Data Display",
+    "path": "/components/mx-carousel.html",
+    "description": "Carousel component - Image/content carousel slider. <mx-carousel autoplay>   <div>Slide 1</div>   <div>Slide 2</div>   <div>Slide 3</div> </mx-carousel> ```",
+    "element": "mx-carousel",
+    "properties": [
+      {
+        "name": "autoplay",
+        "type": "boolean",
+        "description": "Whether to auto-play slides",
+        "default": "false"
+      },
+      {
+        "name": "autoplay-speed",
+        "type": "number",
+        "description": "Auto-play interval in milliseconds"
+      },
+      {
+        "name": "dot-position",
+        "type": "CarouselDotPosition",
+        "description": "Position of navigation dots"
+      },
+      {
+        "name": "dots",
+        "type": "boolean",
+        "description": "Show navigation dots",
+        "default": "true"
+      },
+      {
+        "name": "arrows",
+        "type": "boolean",
+        "description": "Show prev/next arrows",
+        "default": "false"
+      },
+      {
+        "name": "effect",
+        "type": "CarouselEffect",
+        "description": "Transition effect: scrollx or fade",
+        "default": "'scrollx'"
+      },
+      {
+        "name": "current",
+        "type": "number",
+        "description": "Current slide index (0-based)",
+        "default": "0"
+      },
+      {
+        "name": "infinite",
+        "type": "boolean",
+        "description": "Enable infinite loop",
+        "default": "true"
+      },
+      {
+        "name": "speed",
+        "type": "number",
+        "description": "Transition duration in milliseconds",
+        "default": "500"
+      }
+    ],
+    "events": [
+      {
+        "name": "after-change",
+        "description": "Fired after slide changes"
+      },
+      {
+        "name": "before-change",
+        "description": "Fired before slide changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default slot for slides"
+      }
+    ],
+    "examples": []
+  },
+  "mx-checkbox": {
+    "tag": "mx-checkbox",
+    "name": "Checkbox",
+    "category": "Data Entry",
+    "path": "/components/mx-checkbox.html",
+    "description": "Checkbox component for selection. <mx-checkbox>Checkbox</mx-checkbox> <mx-checkbox checked>Checked</mx-checkbox> <mx-checkbox indeterminate>Indeterminate</mx-checkbox> <mx-checkbox disabled>Disabled</mx-checkbox> ```",
+    "element": "mx-checkbox",
+    "properties": [
+      {
+        "name": "checked",
+        "type": "boolean",
+        "description": "Whether checkbox is checked",
+        "default": "false"
+      },
+      {
+        "name": "indeterminate",
+        "type": "boolean",
+        "description": "Whether checkbox is in indeterminate state",
+        "default": "false"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Value of checkbox",
+        "default": "''"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when checked state changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Label content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-collapse-panel": {
+    "tag": "mx-collapse-panel",
+    "name": "Collapse",
+    "category": "Data Display",
+    "path": "/components/mx-collapse-panel.html",
+    "description": "Collapse panel component (child of mx-collapse). <mx-collapse-panel key=\"1\" header=\"Panel Title\">   Panel content here </mx-collapse-panel> ```",
+    "element": "mx-collapse-panel",
+    "properties": [
+      {
+        "name": "key",
+        "type": "string",
+        "description": "Unique key for the panel",
+        "default": "''"
+      },
+      {
+        "name": "header",
+        "type": "string",
+        "description": "Panel header text",
+        "default": "''"
+      },
+      {
+        "name": "active",
+        "type": "boolean",
+        "description": "Whether panel is expanded",
+        "default": "false"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Whether panel is disabled",
+        "default": "false"
+      },
+      {
+        "name": "show-arrow",
+        "type": "boolean",
+        "description": "Whether to show expand arrow"
+      },
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "description": "Whether panel can be collapsed: header, disabled",
+        "default": "''"
+      },
+      {
+        "name": "expand-icon-position",
+        "type": "string",
+        "description": "Position of expand icon: start, end"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Panel content"
+      },
+      {
+        "name": "header",
+        "description": "Custom header content"
+      },
+      {
+        "name": "extra",
+        "description": "Extra content in header (right side)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-collapse": {
+    "tag": "mx-collapse",
+    "name": "Collapse",
+    "category": "Data Display",
+    "path": "/components/mx-collapse.html",
+    "description": "Collapse container component for accordion panels. <mx-collapse>   <mx-collapse-panel key=\"1\" header=\"Panel 1\">Content 1</mx-collapse-panel>   <mx-collapse-panel key=\"2\" header=\"Panel 2\">Content 2</mx-collapse-panel> </mx-collapse> <!-- Accordion mode --> <mx-collapse accordion active-key=\"1\">   <mx-collapse-panel key=\"1\" header=\"Panel 1\">Content 1</mx-collapse-panel>   <mx-collapse-panel key=\"2\" header=\"Panel 2\">Content 2</mx-collapse-panel> </mx-collapse> ```",
+    "element": "mx-collapse",
+    "properties": [
+      {
+        "name": "active-key",
+        "type": "string",
+        "description": "Currently active panel key(s), comma-separated for multiple"
+      },
+      {
+        "name": "accordion",
+        "type": "boolean",
+        "description": "Accordion mode (only one panel open at a time)",
+        "default": "false"
+      },
+      {
+        "name": "bordered",
+        "type": "boolean",
+        "description": "Whether to show border",
+        "default": "true"
+      },
+      {
+        "name": "expand-icon-position",
+        "type": "string",
+        "description": "Position of expand icon: start, end"
+      },
+      {
+        "name": "ghost",
+        "type": "boolean",
+        "description": "Make collapse borderless and transparent",
+        "default": "false"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when active panels change"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Collapse panel items (mx-collapse-panel elements)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-color-picker": {
+    "tag": "mx-color-picker",
+    "name": "Color Picker",
+    "category": "Data Entry",
+    "path": "/components/mx-color-picker.html",
+    "description": "Color picker component for selecting colors. <mx-color-picker value=\"#1677ff\" show-text></mx-color-picker> ```",
+    "element": "mx-color-picker",
+    "properties": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Current color value (hex format)",
+        "default": "'#1677ff'"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Whether the picker is disabled",
+        "default": "false"
+      },
+      {
+        "name": "show-text",
+        "type": "boolean",
+        "description": "Whether to show color text"
+      },
+      {
+        "name": "size",
+        "type": "string",
+        "description": "Size: large, default, small",
+        "default": "'default'"
+      },
+      {
+        "name": "format",
+        "type": "string",
+        "description": "Color format: hex, rgb, hsl",
+        "default": "'hex'"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when color changes"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-date-picker": {
+    "tag": "mx-date-picker",
+    "name": "Date Picker",
+    "category": "Data Entry",
+    "path": "/components/mx-date-picker.html",
+    "description": "DatePicker component - Date selection input with calendar. <mx-date-picker value=\"2024-01-15\"></mx-date-picker> <mx-date-picker picker=\"month\"></mx-date-picker> <mx-date-picker picker=\"year\"></mx-date-picker> ```",
+    "element": "mx-date-picker",
+    "properties": [
+      {
+        "name": "size",
+        "type": "DatePickerSize",
+        "description": "Input size: small, middle, large",
+        "default": "'middle'"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Current date value (YYYY-MM-DD format)",
+        "default": "''"
+      },
+      {
+        "name": "default-value",
+        "type": "string",
+        "description": "Default date value"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder text",
+        "default": "'Select date'"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "picker",
+        "type": "DatePickerMode",
+        "description": "Picker mode: date, week, month, quarter, year",
+        "default": "'date'"
+      },
+      {
+        "name": "allow-clear",
+        "type": "boolean",
+        "description": "Show clear button"
+      },
+      {
+        "name": "show-today",
+        "type": "boolean",
+        "description": "Show \"Today\" button"
+      },
+      {
+        "name": "format",
+        "type": "string",
+        "description": "Date display format",
+        "default": "'YYYY-MM-DD'"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when date value changes"
+      },
+      {
+        "name": "ok",
+        "description": "Fired when OK button is clicked"
+      },
+      {
+        "name": "panel-change",
+        "description": "Fired when panel changes"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-descriptions-item": {
+    "tag": "mx-descriptions-item",
+    "name": "Descriptions",
+    "category": "Data Display",
+    "path": "/components/mx-descriptions-item.html",
+    "description": "Descriptions item component (child of mx-descriptions). <mx-descriptions-item label=\"Name\">John Doe</mx-descriptions-item> ```",
+    "element": "mx-descriptions-item",
+    "properties": [
+      {
+        "name": "label",
+        "type": "string",
+        "description": "Item label",
+        "default": "''"
+      },
+      {
+        "name": "span",
+        "type": "number",
+        "description": "Column span (default 1)",
+        "default": "1"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Item content"
+      },
+      {
+        "name": "label",
+        "description": "Custom label content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-descriptions": {
+    "tag": "mx-descriptions",
+    "name": "Descriptions",
+    "category": "Data Display",
+    "path": "/components/mx-descriptions.html",
+    "description": "Descriptions container component for displaying read-only data. <mx-descriptions title=\"User Info\">   <mx-descriptions-item label=\"Name\">John Doe</mx-descriptions-item>   <mx-descriptions-item label=\"Email\">john@example.com</mx-descriptions-item> </mx-descriptions> ```",
+    "element": "mx-descriptions",
+    "properties": [
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Descriptions title",
+        "default": "''"
+      },
+      {
+        "name": "bordered",
+        "type": "boolean",
+        "description": "Whether to show borders",
+        "default": "false"
+      },
+      {
+        "name": "column",
+        "type": "number",
+        "description": "Number of columns (default 3)",
+        "default": "3"
+      },
+      {
+        "name": "size",
+        "type": "DescriptionsSize",
+        "description": "Size of descriptions",
+        "default": "'default'"
+      },
+      {
+        "name": "layout",
+        "type": "DescriptionsLayout",
+        "description": "Layout direction",
+        "default": "'horizontal'"
+      },
+      {
+        "name": "colon",
+        "type": "boolean",
+        "description": "Whether to show colon after label",
+        "default": "true"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Description items (mx-descriptions-item elements)"
+      },
+      {
+        "name": "title",
+        "description": "Custom title content"
+      },
+      {
+        "name": "extra",
+        "description": "Extra actions in header"
+      }
+    ],
+    "examples": []
+  },
+  "mx-divider": {
+    "tag": "mx-divider",
+    "name": "Divider",
+    "category": "Layout",
+    "path": "/components/mx-divider.html",
+    "description": "Divider component - A divider line separates different content",
+    "element": "mx-divider",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Content to display within the divider (for horizontal dividers with text)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-drawer": {
+    "tag": "mx-drawer",
+    "name": "Drawer",
+    "category": "Feedback",
+    "path": "/components/mx-drawer.html",
+    "description": "Drawer component for panel that slides out from edge of screen. <mx-drawer open title=\"Drawer Title\">   <p>Drawer content</p> </mx-drawer> ```",
+    "element": "mx-drawer",
+    "properties": [
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether drawer is visible",
+        "default": "false"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Drawer title",
+        "default": "''"
+      },
+      {
+        "name": "placement",
+        "type": "DrawerPlacement",
+        "description": "Edge to slide from",
+        "default": "'right'"
+      },
+      {
+        "name": "closable",
+        "type": "boolean",
+        "description": "Whether to show close button",
+        "default": "true"
+      },
+      {
+        "name": "mask",
+        "type": "boolean",
+        "description": "Whether to show overlay mask",
+        "default": "true"
+      },
+      {
+        "name": "mask-closable",
+        "type": "boolean",
+        "description": "Whether clicking mask closes drawer"
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "description": "Width for left/right drawers (default 378px)",
+        "default": "378"
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "description": "Height for top/bottom drawers (default 378px)",
+        "default": "378"
+      },
+      {
+        "name": "z-index",
+        "type": "number",
+        "description": "CSS z-index"
+      },
+      {
+        "name": "size",
+        "type": "DrawerSize",
+        "description": "Predefined size: default, large",
+        "default": "'default'"
+      }
+    ],
+    "events": [
+      {
+        "name": "close",
+        "description": "Dispatched when drawer is closed"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Drawer content"
+      },
+      {
+        "name": "title",
+        "description": "Custom title content"
+      },
+      {
+        "name": "extra",
+        "description": "Extra actions in header"
+      },
+      {
+        "name": "footer",
+        "description": "Footer content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-dropdown": {
+    "tag": "mx-dropdown",
+    "name": "Dropdown",
+    "category": "Navigation",
+    "path": "/components/mx-dropdown.html",
+    "description": "Dropdown component for displaying a menu. <mx-dropdown>   <button slot=\"trigger\">Dropdown</button>   <div slot=\"overlay\">     <mx-menu>       <mx-menu-item>Item 1</mx-menu-item>       <mx-menu-item>Item 2</mx-menu-item>     </mx-menu>   </div> </mx-dropdown> ```",
+    "element": "mx-dropdown",
+    "properties": [
+      {
+        "name": "placement",
+        "type": "DropdownPlacement",
+        "description": "Position of dropdown",
+        "default": "'bottomLeft'"
+      },
+      {
+        "name": "trigger",
+        "type": "DropdownTrigger",
+        "description": "How dropdown is triggered",
+        "default": "'hover'"
+      },
+      {
+        "name": "visible",
+        "type": "boolean",
+        "description": "Whether dropdown is visible (controlled)"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Whether dropdown is disabled",
+        "default": "false"
+      },
+      {
+        "name": "arrow",
+        "type": "boolean",
+        "description": "Whether to show arrow",
+        "default": "false"
+      },
+      {
+        "name": "mouse-enter-delay",
+        "type": "number",
+        "description": "Delay in seconds before showing (hover)"
+      },
+      {
+        "name": "mouse-leave-delay",
+        "type": "number",
+        "description": "Delay in seconds before hiding (hover)"
+      }
+    ],
+    "events": [
+      {
+        "name": "visible-change",
+        "description": "Dispatched when visibility changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Trigger element"
+      },
+      {
+        "name": "overlay",
+        "description": "Dropdown menu content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-empty": {
+    "tag": "mx-empty",
+    "name": "Empty",
+    "category": "Data Display",
+    "path": "/components/mx-empty.html",
+    "description": "Empty state component for displaying when there's no data. <mx-empty></mx-empty> <mx-empty description=\"No data\"></mx-empty> <mx-empty image=\"simple\"></mx-empty> ```",
+    "element": "mx-empty",
+    "properties": [
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Description text",
+        "default": "'No Data'"
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "description": "Image URL or preset: 'default', 'simple'",
+        "default": "'default'"
+      },
+      {
+        "name": "image-height",
+        "type": "number",
+        "description": "Custom image height"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom content below description"
+      },
+      {
+        "name": "image",
+        "description": "Custom image content"
+      },
+      {
+        "name": "description",
+        "description": "Custom description content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-flex": {
+    "tag": "mx-flex",
+    "name": "Flex",
+    "category": "Layout",
+    "path": "/components/mx-flex.html",
+    "description": "Flex component - Flexbox layout wrapper",
+    "element": "mx-flex",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Content to display in the flex container"
+      }
+    ],
+    "examples": []
+  },
+  "mx-float-button": {
+    "tag": "mx-float-button",
+    "name": "Float Button",
+    "category": "Other",
+    "path": "/components/mx-float-button.html",
+    "description": "Float button component for floating action buttons. <mx-float-button   type=\"primary\"   icon=\"+\"   tooltip=\"Add new\" ></mx-float-button> ```",
+    "element": "mx-float-button",
+    "properties": [
+      {
+        "name": "type",
+        "type": "FloatButtonType",
+        "description": "Button type: default, primary",
+        "default": "'default'"
+      },
+      {
+        "name": "shape",
+        "type": "FloatButtonShape",
+        "description": "Button shape: circle, square",
+        "default": "'circle'"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "description": "Icon to display",
+        "default": "''"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Description text",
+        "default": "''"
+      },
+      {
+        "name": "tooltip",
+        "type": "string",
+        "description": "Tooltip text",
+        "default": "''"
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "description": "Link URL (makes button a link)",
+        "default": "''"
+      },
+      {
+        "name": "target",
+        "type": "string",
+        "description": "Link target (_blank, _self, etc)",
+        "default": "''"
+      }
+    ],
+    "events": [
+      {
+        "name": "click",
+        "description": "Fired when button is clicked"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom content (icon, text)"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon content"
+      },
+      {
+        "name": "description",
+        "description": "Custom description"
+      }
+    ],
+    "examples": []
+  },
+  "mx-form-item": {
+    "tag": "mx-form-item",
+    "name": "Form",
+    "category": "Data Entry",
+    "path": "/components/mx-form-item.html",
+    "description": "Form Item component - Form field wrapper with label and validation",
+    "element": "mx-form-item",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Form control element"
+      }
+    ],
+    "examples": []
+  },
+  "mx-form": {
+    "tag": "mx-form",
+    "name": "Form",
+    "category": "Data Entry",
+    "path": "/components/mx-form.html",
+    "description": "Form component - Form container with validation",
+    "element": "mx-form",
+    "properties": [],
+    "events": [
+      {
+        "name": "submit",
+        "description": "Dispatched when form is submitted"
+      },
+      {
+        "name": "values-change",
+        "description": "Dispatched when form values change"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Form items (mx-form-item)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-col": {
+    "tag": "mx-col",
+    "name": "Grid",
+    "category": "Layout",
+    "path": "/components/mx-col.html",
+    "description": "Col component - 24-column grid column",
+    "element": "mx-col",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Content to display in the column"
+      }
+    ],
+    "examples": []
+  },
+  "mx-row": {
+    "tag": "mx-row",
+    "name": "Grid",
+    "category": "Layout",
+    "path": "/components/mx-row.html",
+    "description": "Row component - 24-column grid row",
+    "element": "mx-row",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Column elements (mx-col)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-icon": {
+    "tag": "mx-icon",
+    "name": "Icon",
+    "category": "General",
+    "path": "/components/mx-icon.html",
+    "description": "Icon component for displaying SVG icons. <!-- Using svg prop --> <mx-icon svg=\"<svg>...</svg>\"></mx-icon> <!-- Spinning icon --> <mx-icon spin svg=\"<svg>...</svg>\"></mx-icon> <!-- Rotated icon --> <mx-icon rotate=\"90\" svg=\"<svg>...</svg>\"></mx-icon> <!-- Using slot --> <mx-icon>   <svg>...</svg> </mx-icon> ```",
+    "element": "mx-icon",
+    "properties": [
+      {
+        "name": "svg",
+        "type": "string",
+        "description": "Raw SVG string to render",
+        "default": "''"
+      },
+      {
+        "name": "spin",
+        "type": "boolean",
+        "description": "Rotate icon with animation",
+        "default": "false"
+      },
+      {
+        "name": "rotate",
+        "type": "number",
+        "description": "Rotate icon by specified degrees"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default slot for icon content (if svg prop not provided)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-image": {
+    "tag": "mx-image",
+    "name": "Image",
+    "category": "Data Display",
+    "path": "/components/mx-image.html",
+    "description": "Image component with preview and loading states. <mx-image   src=\"image.jpg\"   alt=\"Example\"   preview   width=\"200px\" ></mx-image> ```",
+    "element": "mx-image",
+    "properties": [
+      {
+        "name": "src",
+        "type": "string",
+        "description": "Image source URL",
+        "default": "''"
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "description": "Alt text for the image",
+        "default": "''"
+      },
+      {
+        "name": "width",
+        "type": "string",
+        "description": "Width of the image",
+        "default": "''"
+      },
+      {
+        "name": "height",
+        "type": "string",
+        "description": "Height of the image",
+        "default": "''"
+      },
+      {
+        "name": "fit",
+        "type": "ImageFit",
+        "description": "How image should be resized: fill, contain, cover, none, scale-down",
+        "default": "'contain'"
+      },
+      {
+        "name": "preview",
+        "type": "boolean",
+        "description": "Whether to enable image preview on click",
+        "default": "false"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder image URL",
+        "default": "''"
+      },
+      {
+        "name": "fallback",
+        "type": "string",
+        "description": "Fallback image URL on error",
+        "default": "''"
+      }
+    ],
+    "events": [
+      {
+        "name": "load",
+        "description": "Fired when image loads successfully"
+      },
+      {
+        "name": "error",
+        "description": "Fired when image fails to load"
+      }
+    ],
+    "slots": [
+      {
+        "name": "placeholder",
+        "description": "Custom placeholder content"
+      },
+      {
+        "name": "error",
+        "description": "Custom error content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-input-password": {
+    "tag": "mx-input-password",
+    "name": "Input",
+    "category": "Data Entry",
+    "path": "/components/mx-input-password.html",
+    "description": "Password input component with visibility toggle. <mx-input-password placeholder=\"Enter password\"></mx-input-password> <mx-input-password visibility-toggle placeholder=\"Password\"></mx-input-password> ```",
+    "element": "mx-input-password",
+    "properties": [
+      {
+        "name": "variant",
+        "type": "InputVariant",
+        "description": "Input variant",
+        "default": "'outlined'"
+      },
+      {
+        "name": "size",
+        "type": "InputSize",
+        "description": "Input size",
+        "default": "'middle'"
+      },
+      {
+        "name": "status",
+        "type": "InputStatus",
+        "description": "Validation status",
+        "default": "''"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Input value",
+        "default": "''"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder text",
+        "default": "''"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "visibility-toggle",
+        "type": "boolean",
+        "description": "Show visibility toggle button"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when input value changes"
+      },
+      {
+        "name": "input",
+        "description": "Fired when user types"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-input-textarea": {
+    "tag": "mx-input-textarea",
+    "name": "Input",
+    "category": "Data Entry",
+    "path": "/components/mx-input-textarea.html",
+    "description": "TextArea component for multi-line text entry. <mx-input-textarea placeholder=\"Enter text\" rows=\"4\"></mx-input-textarea> <mx-input-textarea auto-size show-count max-length=\"200\"></mx-input-textarea> ```",
+    "element": "mx-input-textarea",
+    "properties": [
+      {
+        "name": "status",
+        "type": "InputStatus",
+        "description": "Validation status",
+        "default": "''"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Input value",
+        "default": "''"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder text",
+        "default": "''"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "allow-clear",
+        "type": "boolean",
+        "description": "Show clear button"
+      },
+      {
+        "name": "show-count",
+        "type": "boolean",
+        "description": "Show character count"
+      },
+      {
+        "name": "max-length",
+        "type": "number",
+        "description": "Maximum character length"
+      },
+      {
+        "name": "rows",
+        "type": "number",
+        "description": "Number of rows",
+        "default": "4"
+      },
+      {
+        "name": "auto-size",
+        "type": "boolean|object",
+        "description": "Auto-size configuration"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when input value changes"
+      },
+      {
+        "name": "input",
+        "description": "Fired when user types"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-input": {
+    "tag": "mx-input",
+    "name": "Input",
+    "category": "Data Entry",
+    "path": "/components/mx-input.html",
+    "description": "Input component for text entry. <!-- Basic input --> <mx-input placeholder=\"Enter text\"></mx-input> <!-- With prefix/suffix --> <mx-input>   <mx-icon slot=\"prefix\" svg=\"...\"></mx-icon>   <span slot=\"suffix\">.com</span> </mx-input> <!-- With character count --> <mx-input show-count max-length=\"100\"></mx-input> <!-- With clear button --> <mx-input allow-clear></mx-input> <!-- Different variants --> <mx-input variant=\"filled\"></mx-input> <mx-input variant=\"borderless\"></mx-input> ```",
+    "element": "mx-input",
+    "properties": [
+      {
+        "name": "variant",
+        "type": "InputVariant",
+        "description": "Input variant: outlined, filled, borderless, underlined",
+        "default": "'outlined'"
+      },
+      {
+        "name": "size",
+        "type": "InputSize",
+        "description": "Input size: small, middle, large",
+        "default": "'middle'"
+      },
+      {
+        "name": "status",
+        "type": "InputStatus",
+        "description": "Validation status: error, warning",
+        "default": "''"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Input value",
+        "default": "''"
+      },
+      {
+        "name": "default-value",
+        "type": "string",
+        "description": "Default input value"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder text",
+        "default": "''"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "allow-clear",
+        "type": "boolean",
+        "description": "Show clear button"
+      },
+      {
+        "name": "show-count",
+        "type": "boolean",
+        "description": "Show character count"
+      },
+      {
+        "name": "max-length",
+        "type": "number",
+        "description": "Maximum character length"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "description": "Input type (text, password, email, etc.)",
+        "default": "'text'"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when input value changes"
+      },
+      {
+        "name": "input",
+        "description": "Fired when user types"
+      },
+      {
+        "name": "focus",
+        "description": "Fired when input receives focus"
+      },
+      {
+        "name": "blur",
+        "description": "Fired when input loses focus"
+      },
+      {
+        "name": "pressenter",
+        "description": "Fired when Enter key is pressed"
+      },
+      {
+        "name": "clear",
+        "description": "Fired when clear button is clicked"
+      }
+    ],
+    "slots": [
+      {
+        "name": "prefix",
+        "description": "Prefix content (icon, text)"
+      },
+      {
+        "name": "suffix",
+        "description": "Suffix content (icon, text)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-input-number": {
+    "tag": "mx-input-number",
+    "name": "Input Number",
+    "category": "Data Entry",
+    "path": "/components/mx-input-number.html",
+    "description": "InputNumber component for numeric input with increment/decrement controls. <!-- Basic input number --> <mx-input-number value=\"10\"></mx-input-number> <!-- With min and max --> <mx-input-number min=\"0\" max=\"100\" value=\"50\"></mx-input-number> <!-- With custom step --> <mx-input-number step=\"0.1\" precision=\"2\"></mx-input-number> <!-- Without controls --> <mx-input-number :controls=\"false\"></mx-input-number> <!-- With prefix/suffix --> <mx-input-number>   <span slot=\"prefix\">$</span>   <span slot=\"suffix\">.00</span> </mx-input-number> ```",
+    "element": "mx-input-number",
+    "properties": [
+      {
+        "name": "size",
+        "type": "InputNumberSize",
+        "description": "Input size: small, middle, large",
+        "default": "'middle'"
+      },
+      {
+        "name": "status",
+        "type": "InputNumberStatus",
+        "description": "Validation status: error, warning",
+        "default": "''"
+      },
+      {
+        "name": "variant",
+        "type": "InputNumberVariant",
+        "description": "Input variant: outlined, filled, borderless",
+        "default": "'outlined'"
+      },
+      {
+        "name": "value",
+        "type": "number",
+        "description": "Current value"
+      },
+      {
+        "name": "default-value",
+        "type": "number",
+        "description": "Default value"
+      },
+      {
+        "name": "min",
+        "type": "number",
+        "description": "Minimum value",
+        "default": "-Infinity"
+      },
+      {
+        "name": "max",
+        "type": "number",
+        "description": "Maximum value",
+        "default": "Infinity"
+      },
+      {
+        "name": "step",
+        "type": "number",
+        "description": "Step for increment/decrement",
+        "default": "1"
+      },
+      {
+        "name": "precision",
+        "type": "number",
+        "description": "Number of decimal places"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "controls",
+        "type": "boolean",
+        "description": "Show increment/decrement controls",
+        "default": "true"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder text",
+        "default": "''"
+      },
+      {
+        "name": "keyboard",
+        "type": "boolean",
+        "description": "Enable keyboard input",
+        "default": "true"
+      },
+      {
+        "name": "controls-position",
+        "type": "string",
+        "description": "Position of controls: right (default) or updown"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when value changes"
+      },
+      {
+        "name": "blur",
+        "description": "Fired when input loses focus"
+      },
+      {
+        "name": "focus",
+        "description": "Fired when input receives focus"
+      },
+      {
+        "name": "step",
+        "description": "Fired when stepping up/down"
+      }
+    ],
+    "slots": [
+      {
+        "name": "prefix",
+        "description": "Prefix content"
+      },
+      {
+        "name": "suffix",
+        "description": "Suffix content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-content": {
+    "tag": "mx-content",
+    "name": "Layout",
+    "category": "Layout",
+    "path": "/components/mx-content.html",
+    "description": "Content component - Layout content area",
+    "element": "mx-content",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Main content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-footer": {
+    "tag": "mx-footer",
+    "name": "Layout",
+    "category": "Layout",
+    "path": "/components/mx-footer.html",
+    "description": "Footer component - Layout footer",
+    "element": "mx-footer",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Footer content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-header": {
+    "tag": "mx-header",
+    "name": "Layout",
+    "category": "Layout",
+    "path": "/components/mx-header.html",
+    "description": "Header component - Layout header",
+    "element": "mx-header",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Header content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-layout": {
+    "tag": "mx-layout",
+    "name": "Layout",
+    "category": "Layout",
+    "path": "/components/mx-layout.html",
+    "description": "Layout component - Main layout container",
+    "element": "mx-layout",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Layout content (mx-header, mx-sider, mx-content, mx-footer)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-sider": {
+    "tag": "mx-sider",
+    "name": "Layout",
+    "category": "Layout",
+    "path": "/components/mx-sider.html",
+    "description": "Sider component - Layout sidebar",
+    "element": "mx-sider",
+    "properties": [],
+    "events": [
+      {
+        "name": "collapse",
+        "description": "Dispatched when sider collapses/expands"
+      },
+      {
+        "name": "breakpoint",
+        "description": "Dispatched when breakpoint is triggered"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Sider content"
+      },
+      {
+        "name": "trigger",
+        "description": "Custom collapse trigger"
+      }
+    ],
+    "examples": []
+  },
+  "mx-list-item": {
+    "tag": "mx-list-item",
+    "name": "List",
+    "category": "Data Display",
+    "path": "/components/mx-list-item.html",
+    "description": "List item component for individual list entries. <mx-list-item>   <div>Item Title</div>   <div slot=\"extra\">Extra Info</div> </mx-list-item> ```",
+    "element": "mx-list-item",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Main content"
+      },
+      {
+        "name": "extra",
+        "description": "Extra content (displayed on the right)"
+      },
+      {
+        "name": "actions",
+        "description": "Action buttons/links"
+      }
+    ],
+    "examples": []
+  },
+  "mx-list": {
+    "tag": "mx-list",
+    "name": "List",
+    "category": "Data Display",
+    "path": "/components/mx-list.html",
+    "description": "List component for displaying a list of items. <mx-list bordered>   <mx-list-item>Item 1</mx-list-item>   <mx-list-item>Item 2</mx-list-item> </mx-list> ```",
+    "element": "mx-list",
+    "properties": [
+      {
+        "name": "bordered",
+        "type": "boolean",
+        "description": "Whether to show border",
+        "default": "false"
+      },
+      {
+        "name": "split",
+        "type": "boolean",
+        "description": "Whether to show split line between items",
+        "default": "true"
+      },
+      {
+        "name": "size",
+        "type": "ListSize",
+        "description": "Size of list items: large, default, small",
+        "default": "'default'"
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "description": "Whether to show loading state",
+        "default": "false"
+      },
+      {
+        "name": "header",
+        "type": "string",
+        "description": "List header text",
+        "default": "''"
+      },
+      {
+        "name": "footer",
+        "type": "string",
+        "description": "List footer text",
+        "default": "''"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "List items (mx-list-item)"
+      },
+      {
+        "name": "header",
+        "description": "Custom header content"
+      },
+      {
+        "name": "footer",
+        "description": "Custom footer content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-masonry": {
+    "tag": "mx-masonry",
+    "name": "Masonry",
+    "category": "Layout",
+    "path": "/components/mx-masonry.html",
+    "description": "Masonry component - Masonry grid layout for dynamic content. <mx-masonry columns=\"3\" gap=\"16\">   <div>Item 1</div>   <div>Item 2</div>   <div>Item 3</div> </mx-masonry> <mx-masonry column-width=\"250px\" gap=\"20\">   <div>Item 1</div>   <div>Item 2</div> </mx-masonry> ```",
+    "element": "mx-masonry",
+    "properties": [
+      {
+        "name": "columns",
+        "type": "number",
+        "description": "Number of columns",
+        "default": "3"
+      },
+      {
+        "name": "gap",
+        "type": "number",
+        "description": "Gap between items in pixels",
+        "default": "16"
+      },
+      {
+        "name": "column-width",
+        "type": "string",
+        "description": "Fixed column width (auto-calculates columns if set)"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default slot for masonry items"
+      }
+    ],
+    "examples": []
+  },
+  "mx-mention": {
+    "tag": "mx-mention",
+    "name": "Mention",
+    "category": "Data Entry",
+    "path": "/components/mx-mention.html",
+    "description": "Mention component for @ mentions in text input. <mx-mention   placeholder=\"Type @ to mention\"   options='[{\"value\":\"user1\",\"label\":\"John Doe\"}]' ></mx-mention> ```",
+    "element": "mx-mention",
+    "properties": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Current textarea value",
+        "default": "''"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder text",
+        "default": "''"
+      },
+      {
+        "name": "prefix",
+        "type": "string",
+        "description": "Trigger character (default @)",
+        "default": "'@'"
+      },
+      {
+        "name": "options",
+        "type": "string",
+        "description": "JSON string of mention options",
+        "default": "'[]'"
+      },
+      {
+        "name": "rows",
+        "type": "number",
+        "description": "Number of rows for textarea",
+        "default": "4"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Whether the input is disabled",
+        "default": "false"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when value changes"
+      },
+      {
+        "name": "select",
+        "description": "Fired when mention is selected"
+      },
+      {
+        "name": "search",
+        "description": "Fired when searching for mentions"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-menu-item": {
+    "tag": "mx-menu-item",
+    "name": "Menu",
+    "category": "Navigation",
+    "path": "/components/mx-menu-item.html",
+    "description": "Menu Item component",
+    "element": "mx-menu-item",
+    "properties": [],
+    "events": [
+      {
+        "name": "item-select",
+        "description": "Dispatched when item is clicked"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Item content"
+      },
+      {
+        "name": "icon",
+        "description": "Icon content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-menu": {
+    "tag": "mx-menu",
+    "name": "Menu",
+    "category": "Navigation",
+    "path": "/components/mx-menu.html",
+    "description": "Menu component - Navigation menu",
+    "element": "mx-menu",
+    "properties": [],
+    "events": [
+      {
+        "name": "select",
+        "description": "Dispatched when menu item is selected"
+      },
+      {
+        "name": "open-change",
+        "description": "Dispatched when sub-menu open state changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Menu items and sub-menus"
+      }
+    ],
+    "examples": []
+  },
+  "mx-sub-menu": {
+    "tag": "mx-sub-menu",
+    "name": "Menu",
+    "category": "Navigation",
+    "path": "/components/mx-sub-menu.html",
+    "description": "Sub Menu component - Nested menu container",
+    "element": "mx-sub-menu",
+    "properties": [],
+    "events": [
+      {
+        "name": "submenu-toggle",
+        "description": "Dispatched when sub-menu is opened/closed"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Sub-menu items"
+      },
+      {
+        "name": "title",
+        "description": "Title content"
+      },
+      {
+        "name": "icon",
+        "description": "Icon content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-message": {
+    "tag": "mx-message",
+    "name": "Message",
+    "category": "Feedback",
+    "path": "/components/mx-message.html",
+    "description": "Message component for displaying lightweight global feedback. <mx-message open type=\"success\" content=\"Success message\"></mx-message> ```",
+    "element": "mx-message",
+    "properties": [
+      {
+        "name": "content",
+        "type": "string",
+        "description": "Message content text",
+        "default": "''"
+      },
+      {
+        "name": "type",
+        "type": "MessageType",
+        "description": "Message type: success, info, warning, error, loading"
+      },
+      {
+        "name": "duration",
+        "type": "number",
+        "description": "Auto-close duration in seconds (0 = no auto-close)",
+        "default": "3"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether message is visible",
+        "default": "false"
+      }
+    ],
+    "events": [
+      {
+        "name": "close",
+        "description": "Dispatched when message is closed"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom message content"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon"
+      }
+    ],
+    "examples": []
+  },
+  "mx-modal": {
+    "tag": "mx-modal",
+    "name": "Modal",
+    "category": "Feedback",
+    "path": "/components/mx-modal.html",
+    "description": "Modal component for dialog boxes. <mx-modal open title=\"Modal Title\">   <p>Modal content</p> </mx-modal> ```",
+    "element": "mx-modal",
+    "properties": [
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether modal is visible",
+        "default": "false"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Modal title",
+        "default": "''"
+      },
+      {
+        "name": "width",
+        "type": "ModalWidth",
+        "description": "Width of modal (default 520px)",
+        "default": "'520px'"
+      },
+      {
+        "name": "centered",
+        "type": "boolean",
+        "description": "Whether modal is vertically centered",
+        "default": "false"
+      },
+      {
+        "name": "closable",
+        "type": "boolean",
+        "description": "Whether to show close button",
+        "default": "true"
+      },
+      {
+        "name": "mask",
+        "type": "boolean",
+        "description": "Whether to show overlay mask",
+        "default": "true"
+      },
+      {
+        "name": "mask-closable",
+        "type": "boolean",
+        "description": "Whether clicking mask closes modal"
+      },
+      {
+        "name": "keyboard",
+        "type": "boolean",
+        "description": "Whether ESC key closes modal",
+        "default": "true"
+      },
+      {
+        "name": "z-index",
+        "type": "number",
+        "description": "CSS z-index"
+      },
+      {
+        "name": "ok-text",
+        "type": "string",
+        "description": "Text for OK button"
+      },
+      {
+        "name": "cancel-text",
+        "type": "string",
+        "description": "Text for Cancel button"
+      },
+      {
+        "name": "confirm-loading",
+        "type": "boolean",
+        "description": "Whether OK button is loading"
+      }
+    ],
+    "events": [
+      {
+        "name": "ok",
+        "description": "Dispatched when OK button clicked"
+      },
+      {
+        "name": "cancel",
+        "description": "Dispatched when cancel/close clicked"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Modal content"
+      },
+      {
+        "name": "title",
+        "description": "Custom title content"
+      },
+      {
+        "name": "footer",
+        "description": "Custom footer content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-notification": {
+    "tag": "mx-notification",
+    "name": "Notification",
+    "category": "Feedback",
+    "path": "/components/mx-notification.html",
+    "description": "Notification component for displaying global notification messages. <mx-notification   open   type=\"success\"   message=\"Success\"   description=\"Operation completed successfully\" ></mx-notification> ```",
+    "element": "mx-notification",
+    "properties": [
+      {
+        "name": "message",
+        "type": "string",
+        "description": "Notification message text",
+        "default": "''"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Description content",
+        "default": "''"
+      },
+      {
+        "name": "type",
+        "type": "NotificationType",
+        "description": "Notification type: success, info, warning, error"
+      },
+      {
+        "name": "placement",
+        "type": "NotificationPlacement",
+        "description": "Position on screen",
+        "default": "'topRight'"
+      },
+      {
+        "name": "duration",
+        "type": "number",
+        "description": "Auto-close duration in seconds (0 = no auto-close)",
+        "default": "4.5"
+      },
+      {
+        "name": "closable",
+        "type": "boolean",
+        "description": "Whether to show close button",
+        "default": "true"
+      },
+      {
+        "name": "show-icon",
+        "type": "boolean",
+        "description": "Whether to show type icon"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether notification is visible",
+        "default": "false"
+      }
+    ],
+    "events": [
+      {
+        "name": "close",
+        "description": "Dispatched when notification is closed"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom message content"
+      },
+      {
+        "name": "description",
+        "description": "Custom description content"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon"
+      },
+      {
+        "name": "btn",
+        "description": "Custom action button"
+      }
+    ],
+    "examples": []
+  },
+  "mx-pagination": {
+    "tag": "mx-pagination",
+    "name": "Pagination",
+    "category": "Navigation",
+    "path": "/components/mx-pagination.html",
+    "description": "Pagination component - Navigate through pages of content",
+    "element": "mx-pagination",
+    "properties": [],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when page or pageSize changes"
+      },
+      {
+        "name": "show-size-change",
+        "description": "Dispatched when pageSize changes"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-popconfirm": {
+    "tag": "mx-popconfirm",
+    "name": "Popconfirm",
+    "category": "Feedback",
+    "path": "/components/mx-popconfirm.html",
+    "description": "Popconfirm component - A simple confirmation dialog that appears on hover/click. <mx-popconfirm title=\"Are you sure?\" ok-text=\"Yes\" cancel-text=\"No\">   <mx-button>Delete</mx-button> </mx-popconfirm> ```",
+    "element": "mx-popconfirm",
+    "properties": [
+      {
+        "name": "title",
+        "type": "string",
+        "description": "The confirmation title",
+        "default": "'Are you sure?'"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Additional description text",
+        "default": "''"
+      },
+      {
+        "name": "ok-text",
+        "type": "string",
+        "description": "Text for confirm button"
+      },
+      {
+        "name": "cancel-text",
+        "type": "string",
+        "description": "Text for cancel button"
+      },
+      {
+        "name": "ok-type",
+        "type": "string",
+        "description": "Button type for confirm: default, primary, danger"
+      },
+      {
+        "name": "placement",
+        "type": "PopconfirmPlacement",
+        "description": "Popover placement",
+        "default": "'top'"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether popover is visible (controlled)",
+        "default": "false"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Whether popover is disabled",
+        "default": "false"
+      },
+      {
+        "name": "trigger",
+        "type": "string",
+        "description": "Trigger mode: click or hover",
+        "default": "'click'"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "description": "Custom icon",
+        "default": "''"
+      }
+    ],
+    "events": [
+      {
+        "name": "confirm",
+        "description": "Fired when confirm button is clicked"
+      },
+      {
+        "name": "cancel",
+        "description": "Fired when cancel button is clicked"
+      },
+      {
+        "name": "open-change",
+        "description": "Fired when visibility changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default slot for trigger element"
+      },
+      {
+        "name": "title",
+        "description": "Custom title slot"
+      },
+      {
+        "name": "description",
+        "description": "Custom description slot"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon slot"
+      }
+    ],
+    "examples": []
+  },
+  "mx-popover": {
+    "tag": "mx-popover",
+    "name": "Popover",
+    "category": "Data Display",
+    "path": "/components/mx-popover.html",
+    "description": "Popover component for displaying rich content in a popup. <mx-popover title=\"Title\" content=\"Content text\">   <button>Click me</button> </mx-popover> ```",
+    "element": "mx-popover",
+    "properties": [
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Popover title",
+        "default": "''"
+      },
+      {
+        "name": "content",
+        "type": "string",
+        "description": "Popover content text",
+        "default": "''"
+      },
+      {
+        "name": "placement",
+        "type": "PopoverPlacement",
+        "description": "Position relative to target",
+        "default": "'top'"
+      },
+      {
+        "name": "trigger",
+        "type": "PopoverTrigger",
+        "description": "How popover is triggered",
+        "default": "'hover'"
+      },
+      {
+        "name": "visible",
+        "type": "boolean",
+        "description": "Whether popover is visible (controlled)"
+      },
+      {
+        "name": "arrow",
+        "type": "boolean",
+        "description": "Whether to show arrow",
+        "default": "true"
+      },
+      {
+        "name": "mouse-enter-delay",
+        "type": "number",
+        "description": "Delay before showing (hover)"
+      },
+      {
+        "name": "mouse-leave-delay",
+        "type": "number",
+        "description": "Delay before hiding (hover)"
+      }
+    ],
+    "events": [
+      {
+        "name": "visible-change",
+        "description": "Dispatched when visibility changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Target element"
+      },
+      {
+        "name": "title",
+        "description": "Custom title content"
+      },
+      {
+        "name": "content",
+        "description": "Custom popover content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-progress": {
+    "tag": "mx-progress",
+    "name": "Progress",
+    "category": "Feedback",
+    "path": "/components/mx-progress.html",
+    "description": "Progress component for displaying progress of an operation. <!-- Line progress --> <mx-progress percent=\"50\"></mx-progress> <!-- Circle progress --> <mx-progress type=\"circle\" percent=\"75\"></mx-progress> <!-- Dashboard --> <mx-progress type=\"dashboard\" percent=\"80\"></mx-progress> <!-- Success state --> <mx-progress percent=\"100\" status=\"success\"></mx-progress> <!-- Custom color --> <mx-progress percent=\"60\" stroke-color=\"#52c41a\"></mx-progress> ```",
+    "element": "mx-progress",
+    "properties": [
+      {
+        "name": "percent",
+        "type": "number",
+        "description": "Progress percentage (0-100)",
+        "default": "0"
+      },
+      {
+        "name": "type",
+        "type": "ProgressType",
+        "description": "Progress type: line, circle, dashboard",
+        "default": "'line'"
+      },
+      {
+        "name": "status",
+        "type": "ProgressStatus",
+        "description": "Progress status: success, exception, normal, active",
+        "default": "'normal'"
+      },
+      {
+        "name": "size",
+        "type": "ProgressSize",
+        "description": "Size: default, small",
+        "default": "'default'"
+      },
+      {
+        "name": "show-info",
+        "type": "boolean",
+        "description": "Whether to show progress text"
+      },
+      {
+        "name": "stroke-width",
+        "type": "number",
+        "description": "Width of progress bar/circle"
+      },
+      {
+        "name": "stroke-color",
+        "type": "string",
+        "description": "Color of progress bar"
+      },
+      {
+        "name": "trail-color",
+        "type": "string",
+        "description": "Color of unfilled part"
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "description": "Canvas width for circle/dashboard (default 120)",
+        "default": "120"
+      },
+      {
+        "name": "gap-degree",
+        "type": "number",
+        "description": "Gap degree for dashboard (default 75)"
+      },
+      {
+        "name": "gap-position",
+        "type": "number",
+        "description": "Gap position for dashboard: top, bottom, left, right"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "format",
+        "description": "Custom progress text format"
+      }
+    ],
+    "examples": []
+  },
+  "mx-qr-code": {
+    "tag": "mx-qr-code",
+    "name": "Qr Code",
+    "category": "Data Display",
+    "path": "/components/mx-qr-code.html",
+    "description": "QR Code component for generating QR codes. <mx-qr-code   value=\"https://example.com\"   size=\"200\"   bordered ></mx-qr-code> ```",
+    "element": "mx-qr-code",
+    "properties": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Value to encode in QR code",
+        "default": "''"
+      },
+      {
+        "name": "size",
+        "type": "number",
+        "description": "Size of QR code in pixels (default 160)",
+        "default": "160"
+      },
+      {
+        "name": "color",
+        "type": "string",
+        "description": "Color of QR code (default #000000)",
+        "default": "'#000000'"
+      },
+      {
+        "name": "bg-color",
+        "type": "string",
+        "description": "Background color (default #ffffff)"
+      },
+      {
+        "name": "error-level",
+        "type": "QRCodeLevel",
+        "description": "Error correction level: L, M, Q, H"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "description": "Icon image URL for center",
+        "default": "''"
+      },
+      {
+        "name": "icon-size",
+        "type": "number",
+        "description": "Icon size (default 40)"
+      },
+      {
+        "name": "bordered",
+        "type": "boolean",
+        "description": "Whether to show border",
+        "default": "false"
+      },
+      {
+        "name": "status",
+        "type": "QRCodeStatus",
+        "description": "Status: active, expired, loading",
+        "default": "'active'"
+      }
+    ],
+    "events": [],
+    "slots": [],
+    "examples": []
+  },
+  "mx-radio": {
+    "tag": "mx-radio",
+    "name": "Radio",
+    "category": "Data Entry",
+    "path": "/components/mx-radio.html",
+    "description": "Radio component for single selection. <mx-radio name=\"group1\" value=\"1\">Option 1</mx-radio> <mx-radio name=\"group1\" value=\"2\">Option 2</mx-radio> <mx-radio name=\"group1\" value=\"3\" checked>Option 3</mx-radio> <mx-radio name=\"group1\" value=\"4\" disabled>Disabled</mx-radio> ```",
+    "element": "mx-radio",
+    "properties": [
+      {
+        "name": "checked",
+        "type": "boolean",
+        "description": "Whether radio is checked",
+        "default": "false"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Value of radio",
+        "default": "''"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "Name for radio group",
+        "default": "''"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when checked state changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Label content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-rate": {
+    "tag": "mx-rate",
+    "name": "Rate",
+    "category": "Data Entry",
+    "path": "/components/mx-rate.html",
+    "description": "Rate component - Star rating",
+    "element": "mx-rate",
+    "properties": [],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when rating changes"
+      },
+      {
+        "name": "hover-change",
+        "description": "Dispatched when hovering over stars"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-result": {
+    "tag": "mx-result",
+    "name": "Result",
+    "category": "Feedback",
+    "path": "/components/mx-result.html",
+    "description": "Result component for displaying operation results. <mx-result   status=\"success\"   title=\"Success\"   sub-title=\"Operation completed successfully\" ></mx-result> ```",
+    "element": "mx-result",
+    "properties": [
+      {
+        "name": "status",
+        "type": "ResultStatus",
+        "description": "Result status type",
+        "default": "'info'"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Result title",
+        "default": "''"
+      },
+      {
+        "name": "sub-title",
+        "type": "string",
+        "description": "Result subtitle/description"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom content area"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon"
+      },
+      {
+        "name": "title",
+        "description": "Custom title"
+      },
+      {
+        "name": "subTitle",
+        "description": "Custom subtitle"
+      },
+      {
+        "name": "extra",
+        "description": "Extra actions (usually buttons)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-segmented": {
+    "tag": "mx-segmented",
+    "name": "Segmented",
+    "category": "Data Display",
+    "path": "/components/mx-segmented.html",
+    "description": "Segmented control component for selecting between options. <mx-segmented   options='[{\"label\":\"Daily\",\"value\":\"day\"},{\"label\":\"Weekly\",\"value\":\"week\"}]'   value=\"day\" ></mx-segmented> ```",
+    "element": "mx-segmented",
+    "properties": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Currently selected value",
+        "default": "''"
+      },
+      {
+        "name": "size",
+        "type": "SegmentedSize",
+        "description": "Size of the control: large, default, small",
+        "default": "'default'"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Whether the control is disabled",
+        "default": "false"
+      },
+      {
+        "name": "block",
+        "type": "boolean",
+        "description": "Whether to fit full width",
+        "default": "false"
+      },
+      {
+        "name": "options",
+        "type": "string",
+        "description": "JSON string of options array",
+        "default": "'[]'"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when selection changes"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-select": {
+    "tag": "mx-select",
+    "name": "Select",
+    "category": "Data Entry",
+    "path": "/components/mx-select.html",
+    "description": "Select component - Dropdown select with search",
+    "element": "mx-select",
+    "properties": [],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when selection changes"
+      },
+      {
+        "name": "search",
+        "description": "Dispatched when search input changes"
+      },
+      {
+        "name": "dropdown-visible-change",
+        "description": "Dispatched when dropdown opens/closes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Option elements (mx-option)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-skeleton": {
+    "tag": "mx-skeleton",
+    "name": "Skeleton",
+    "category": "Feedback",
+    "path": "/components/mx-skeleton.html",
+    "description": "Skeleton component for loading placeholders. <mx-skeleton active></mx-skeleton> <mx-skeleton avatar paragraph></mx-skeleton> ```",
+    "element": "mx-skeleton",
+    "properties": [
+      {
+        "name": "active",
+        "type": "boolean",
+        "description": "Whether to show animation",
+        "default": "false"
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "description": "Whether to show skeleton (when false, shows children)",
+        "default": "true"
+      },
+      {
+        "name": "paragraph",
+        "type": "boolean",
+        "description": "Whether to show paragraph placeholder",
+        "default": "true"
+      },
+      {
+        "name": "avatar",
+        "type": "boolean",
+        "description": "Whether to show avatar placeholder",
+        "default": "false"
+      },
+      {
+        "name": "show-title",
+        "type": "boolean",
+        "description": "Whether to show title placeholder"
+      },
+      {
+        "name": "avatar-shape",
+        "type": "SkeletonShape",
+        "description": "Shape of avatar: circle, square"
+      },
+      {
+        "name": "avatar-size",
+        "type": "SkeletonSize",
+        "description": "Size of avatar"
+      },
+      {
+        "name": "rows",
+        "type": "number",
+        "description": "Number of paragraph rows (default 3)",
+        "default": "3"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Content to show when loading is false"
+      }
+    ],
+    "examples": []
+  },
+  "mx-slider": {
+    "tag": "mx-slider",
+    "name": "Slider",
+    "category": "Data Entry",
+    "path": "/components/mx-slider.html",
+    "description": "Slider component - Range slider for selecting values",
+    "element": "mx-slider",
+    "properties": [],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when value changes (on release)"
+      },
+      {
+        "name": "after-change",
+        "description": "Dispatched after interaction completes"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-space": {
+    "tag": "mx-space",
+    "name": "Space",
+    "category": "Layout",
+    "path": "/components/mx-space.html",
+    "description": "Space component - Set components spacing",
+    "element": "mx-space",
+    "properties": [],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when children change"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Default slot for space items"
+      }
+    ],
+    "examples": []
+  },
+  "mx-spin": {
+    "tag": "mx-spin",
+    "name": "Spin",
+    "category": "Feedback",
+    "path": "/components/mx-spin.html",
+    "description": "Spinner component for displaying loading state. <!-- Simple spinner --> <mx-spin></mx-spin> <!-- With tip text --> <mx-spin tip=\"Loading...\"></mx-spin> <!-- Wrapping content --> <mx-spin spinning>   <div>Your content here</div> </mx-spin> <!-- Large size --> <mx-spin size=\"large\"></mx-spin> ```",
+    "element": "mx-spin",
+    "properties": [
+      {
+        "name": "spinning",
+        "type": "boolean",
+        "description": "Whether to show spinning indicator",
+        "default": "true"
+      },
+      {
+        "name": "size",
+        "type": "SpinSize",
+        "description": "Size of spinner: small, default, large",
+        "default": "'default'"
+      },
+      {
+        "name": "tip",
+        "type": "string",
+        "description": "Tip text to show below spinner",
+        "default": "''"
+      },
+      {
+        "name": "delay",
+        "type": "number",
+        "description": "Delay in milliseconds before showing spinner",
+        "default": "0"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Content to wrap (shows spinner overlay when spinning)"
+      },
+      {
+        "name": "indicator",
+        "description": "Custom loading indicator"
+      }
+    ],
+    "examples": []
+  },
+  "mx-splitter": {
+    "tag": "mx-splitter",
+    "name": "Splitter",
+    "category": "Layout",
+    "path": "/components/mx-splitter.html",
+    "description": "Splitter component - Resizable split pane layout. <mx-splitter default-size=\"30%\">   <div>Left Panel</div>   <div slot=\"second\">Right Panel</div> </mx-splitter> <mx-splitter layout=\"vertical\" default-size=\"200px\">   <div>Top Panel</div>   <div slot=\"second\">Bottom Panel</div> </mx-splitter> ```",
+    "element": "mx-splitter",
+    "properties": [
+      {
+        "name": "layout",
+        "type": "SplitterLayout",
+        "description": "Layout direction: horizontal or vertical",
+        "default": "'horizontal'"
+      },
+      {
+        "name": "default-size",
+        "type": "string",
+        "description": "Default size of first panel (e.g., '50%', '200px')"
+      },
+      {
+        "name": "min",
+        "type": "string",
+        "description": "Minimum size of first panel",
+        "default": "'0px'"
+      },
+      {
+        "name": "max",
+        "type": "string",
+        "description": "Maximum size of first panel",
+        "default": "'100%'"
+      },
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "description": "Enable collapse functionality",
+        "default": "false"
+      },
+      {
+        "name": "split-size",
+        "type": "number",
+        "description": "Size of the split bar in pixels"
+      }
+    ],
+    "events": [
+      {
+        "name": "resize",
+        "description": "Fired when panels are resized"
+      },
+      {
+        "name": "resize-end",
+        "description": "Fired when resize ends"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "First panel content (default slot)"
+      },
+      {
+        "name": "second",
+        "description": "Second panel content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-statistic": {
+    "tag": "mx-statistic",
+    "name": "Statistic",
+    "category": "Data Display",
+    "path": "/components/mx-statistic.html",
+    "description": "Statistic component for displaying statistical data. <mx-statistic title=\"Active Users\" value=\"1234\"></mx-statistic> <mx-statistic title=\"Growth\" value=\"50.52\" suffix=\"%\"></mx-statistic> ```",
+    "element": "mx-statistic",
+    "properties": [
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Statistic title",
+        "default": "''"
+      },
+      {
+        "name": "value",
+        "type": "string|number",
+        "description": "Statistic value",
+        "default": "''"
+      },
+      {
+        "name": "prefix",
+        "type": "string",
+        "description": "Prefix text or icon",
+        "default": "''"
+      },
+      {
+        "name": "suffix",
+        "type": "string",
+        "description": "Suffix text or icon",
+        "default": "''"
+      },
+      {
+        "name": "precision",
+        "type": "number",
+        "description": "Decimal precision for numbers"
+      },
+      {
+        "name": "value-style",
+        "type": "string",
+        "description": "Custom CSS for value"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom content"
+      },
+      {
+        "name": "title",
+        "description": "Custom title content"
+      },
+      {
+        "name": "prefix",
+        "description": "Custom prefix content"
+      },
+      {
+        "name": "suffix",
+        "description": "Custom suffix content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-step": {
+    "tag": "mx-step",
+    "name": "Steps",
+    "category": "Navigation",
+    "path": "/components/mx-step.html",
+    "description": "Step item component (child of mx-steps). <mx-step title=\"Step Title\" description=\"Step description\"></mx-step> ```",
+    "element": "mx-step",
+    "properties": [
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Step title",
+        "default": "''"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Step description",
+        "default": "''"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "description": "Step status: wait, process, finish, error",
+        "default": "'wait'"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "description": "Custom icon",
+        "default": "''"
+      },
+      {
+        "name": "index",
+        "type": "number",
+        "description": "Step index (set by parent)",
+        "default": "0"
+      },
+      {
+        "name": "direction",
+        "type": "string",
+        "description": "Direction (set by parent)",
+        "default": "'horizontal'"
+      },
+      {
+        "name": "size",
+        "type": "string",
+        "description": "Size (set by parent)",
+        "default": "'default'"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom content"
+      },
+      {
+        "name": "title",
+        "description": "Custom title"
+      },
+      {
+        "name": "description",
+        "description": "Custom description"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon"
+      }
+    ],
+    "examples": []
+  },
+  "mx-steps": {
+    "tag": "mx-steps",
+    "name": "Steps",
+    "category": "Navigation",
+    "path": "/components/mx-steps.html",
+    "description": "Steps container component for step-by-step navigation. <mx-steps current=\"1\">   <mx-step title=\"Step 1\"></mx-step>   <mx-step title=\"Step 2\"></mx-step>   <mx-step title=\"Step 3\"></mx-step> </mx-steps> ```",
+    "element": "mx-steps",
+    "properties": [
+      {
+        "name": "current",
+        "type": "number",
+        "description": "Current step index (0-based)",
+        "default": "0"
+      },
+      {
+        "name": "direction",
+        "type": "StepsDirection",
+        "description": "Display direction",
+        "default": "'horizontal'"
+      },
+      {
+        "name": "size",
+        "type": "StepsSize",
+        "description": "Size of steps",
+        "default": "'default'"
+      },
+      {
+        "name": "status",
+        "type": "StepsStatus",
+        "description": "Status of current step",
+        "default": "'process'"
+      },
+      {
+        "name": "progress-dot",
+        "type": "boolean",
+        "description": "Show progress as dots instead of numbers"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when step changes (if clickable)"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Step items (mx-step elements)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-switch": {
+    "tag": "mx-switch",
+    "name": "Switch",
+    "category": "Data Entry",
+    "path": "/components/mx-switch.html",
+    "description": "Switch component for toggle operations. <mx-switch></mx-switch> <mx-switch checked></mx-switch> <mx-switch disabled></mx-switch> <mx-switch loading></mx-switch> <mx-switch size=\"small\"></mx-switch> <mx-switch checked-children=\"ON\" un-checked-children=\"OFF\"></mx-switch> ```",
+    "element": "mx-switch",
+    "properties": [
+      {
+        "name": "checked",
+        "type": "boolean",
+        "description": "Whether switch is on",
+        "default": "false"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "description": "Loading state",
+        "default": "false"
+      },
+      {
+        "name": "size",
+        "type": "SwitchSize",
+        "description": "Switch size: small, default",
+        "default": "'default'"
+      },
+      {
+        "name": "checked-children",
+        "type": "string",
+        "description": "Text to display when checked"
+      },
+      {
+        "name": "un-checked-children",
+        "type": "string",
+        "description": "Text to display when unchecked"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when checked state changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "checked",
+        "description": "Content to display when checked"
+      },
+      {
+        "name": "unchecked",
+        "description": "Content to display when unchecked"
+      }
+    ],
+    "examples": []
+  },
+  "mx-tab-pane": {
+    "tag": "mx-tab-pane",
+    "name": "Tabs",
+    "category": "Navigation",
+    "path": "/components/mx-tab-pane.html",
+    "description": "Tab Pane component - Individual tab content",
+    "element": "mx-tab-pane",
+    "properties": [],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Content to display when tab is active"
+      }
+    ],
+    "examples": []
+  },
+  "mx-tabs": {
+    "tag": "mx-tabs",
+    "name": "Tabs",
+    "category": "Navigation",
+    "path": "/components/mx-tabs.html",
+    "description": "Tabs component - Tab navigation container",
+    "element": "mx-tabs",
+    "properties": [],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when active tab changes"
+      },
+      {
+        "name": "edit",
+        "description": "Dispatched when add/remove tab in editable mode"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Tab pane elements (mx-tab-pane)"
+      },
+      {
+        "name": "tab-bar-extra-content",
+        "description": "Extra content in tab bar"
+      }
+    ],
+    "examples": []
+  },
+  "mx-tag": {
+    "tag": "mx-tag",
+    "name": "Tag",
+    "category": "Data Display",
+    "path": "/components/mx-tag.html",
+    "description": "Tag component for categorization or markup. <!-- Basic tag --> <mx-tag>Tag</mx-tag> <!-- Colored tags --> <mx-tag color=\"success\">Success</mx-tag> <mx-tag color=\"error\">Error</mx-tag> <!-- Closable --> <mx-tag closable>Closable</mx-tag> <!-- Custom color --> <mx-tag color=\"#87d068\">Custom</mx-tag> <!-- Borderless --> <mx-tag color=\"processing\" bordered=\"false\">Processing</mx-tag> ```",
+    "element": "mx-tag",
+    "properties": [
+      {
+        "name": "color",
+        "type": "TagColor",
+        "description": "Predefined color or custom hex color",
+        "default": "'default'"
+      },
+      {
+        "name": "closable",
+        "type": "boolean",
+        "description": "Whether tag can be closed",
+        "default": "false"
+      },
+      {
+        "name": "close-icon",
+        "type": "string",
+        "description": "Custom close icon"
+      },
+      {
+        "name": "bordered",
+        "type": "boolean",
+        "description": "Whether tag has border",
+        "default": "true"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "description": "Icon to display before text",
+        "default": "''"
+      }
+    ],
+    "events": [
+      {
+        "name": "close",
+        "description": "Dispatched when tag is closed"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Tag content"
+      },
+      {
+        "name": "icon",
+        "description": "Custom icon content"
+      },
+      {
+        "name": "close-icon",
+        "description": "Custom close icon content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-theme": {
+    "tag": "mx-theme",
+    "name": "Theme",
+    "category": "Other",
+    "path": "/components/mx-theme.html",
+    "description": "Theme provider component that generates and provides design tokens to all descendant Meridian components. <!-- Default theme --> <mx-theme>   <mx-button>Click me</mx-button> </mx-theme> <!-- Custom primary color --> <mx-theme primary-color=\"#52c41a\">   <mx-button>Click me</mx-button> </mx-theme> ```",
+    "element": "mx-theme",
+    "properties": [
+      {
+        "name": "primary-color",
+        "type": "string",
+        "description": "Primary brand color (hex). Default: #1677ff (Ant Design blue)"
+      }
+    ],
+    "events": [],
+    "slots": [],
+    "examples": []
+  },
+  "mx-time-picker": {
+    "tag": "mx-time-picker",
+    "name": "Time Picker",
+    "category": "Data Entry",
+    "path": "/components/mx-time-picker.html",
+    "description": "TimePicker component - Time selection input. <mx-time-picker value=\"12:30:00\"></mx-time-picker> <mx-time-picker use-12-hours></mx-time-picker> ```",
+    "element": "mx-time-picker",
+    "properties": [
+      {
+        "name": "size",
+        "type": "TimePickerSize",
+        "description": "Input size: small, middle, large",
+        "default": "'middle'"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "description": "Current time value (HH:mm:ss format)",
+        "default": "''"
+      },
+      {
+        "name": "default-value",
+        "type": "string",
+        "description": "Default time value"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "description": "Placeholder text",
+        "default": "'Select time'"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "format",
+        "type": "TimePickerFormat",
+        "description": "Time format: 12 or 24 hour",
+        "default": "'24'"
+      },
+      {
+        "name": "use-12-hours",
+        "type": "boolean",
+        "description": "Use 12-hour format"
+      },
+      {
+        "name": "allow-clear",
+        "type": "boolean",
+        "description": "Show clear button"
+      },
+      {
+        "name": "hour-step",
+        "type": "number",
+        "description": "Hour step"
+      },
+      {
+        "name": "minute-step",
+        "type": "number",
+        "description": "Minute step"
+      },
+      {
+        "name": "second-step",
+        "type": "number",
+        "description": "Second step"
+      },
+      {
+        "name": "show-now",
+        "type": "boolean",
+        "description": "Show \"Now\" button"
+      }
+    ],
+    "events": [
+      {
+        "name": "change",
+        "description": "Fired when time value changes"
+      },
+      {
+        "name": "ok",
+        "description": "Fired when OK button is clicked"
+      }
+    ],
+    "slots": [],
+    "examples": []
+  },
+  "mx-timeline-item": {
+    "tag": "mx-timeline-item",
+    "name": "Timeline",
+    "category": "Data Display",
+    "path": "/components/mx-timeline-item.html",
+    "description": "Timeline item component for individual timeline events. <mx-timeline-item color=\"green\" label=\"2024-01-01\">   Event completed successfully </mx-timeline-item> ```",
+    "element": "mx-timeline-item",
+    "properties": [
+      {
+        "name": "color",
+        "type": "TimelineItemColor",
+        "description": "Color of the timeline dot: blue, red, green, gray",
+        "default": "'blue'"
+      },
+      {
+        "name": "position",
+        "type": "string",
+        "description": "Position in alternate mode: left, right",
+        "default": "''"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "description": "Label text for the item",
+        "default": "''"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Main content"
+      },
+      {
+        "name": "dot",
+        "description": "Custom dot content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-timeline": {
+    "tag": "mx-timeline",
+    "name": "Timeline",
+    "category": "Data Display",
+    "path": "/components/mx-timeline.html",
+    "description": "Timeline component for displaying event sequences. <mx-timeline>   <mx-timeline-item>Event 1</mx-timeline-item>   <mx-timeline-item>Event 2</mx-timeline-item> </mx-timeline> ```",
+    "element": "mx-timeline",
+    "properties": [
+      {
+        "name": "mode",
+        "type": "TimelineMode",
+        "description": "Position of timeline content: left, right, alternate",
+        "default": "'left'"
+      },
+      {
+        "name": "pending",
+        "type": "boolean",
+        "description": "Whether to show pending state at the end",
+        "default": "false"
+      },
+      {
+        "name": "pending-dot",
+        "type": "string",
+        "description": "Custom pending dot content"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Timeline items (mx-timeline-item)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-tooltip": {
+    "tag": "mx-tooltip",
+    "name": "Tooltip",
+    "category": "Data Display",
+    "path": "/components/mx-tooltip.html",
+    "description": "Tooltip component for displaying helpful text on hover/focus/click. <!-- Basic tooltip --> <mx-tooltip title=\"Tooltip text\">   <button>Hover me</button> </mx-tooltip> <!-- Different placements --> <mx-tooltip title=\"Top\" placement=\"top\">   <button>Top</button> </mx-tooltip> <!-- Click trigger --> <mx-tooltip title=\"Click to show\" trigger=\"click\">   <button>Click me</button> </mx-tooltip> <!-- Custom color --> <mx-tooltip title=\"Custom\" color=\"#f50\">   <button>Red tooltip</button> </mx-tooltip> ```",
+    "element": "mx-tooltip",
+    "properties": [
+      {
+        "name": "title",
+        "type": "string",
+        "description": "Tooltip text content",
+        "default": "''"
+      },
+      {
+        "name": "placement",
+        "type": "TooltipPlacement",
+        "description": "Position of tooltip relative to target",
+        "default": "'top'"
+      },
+      {
+        "name": "trigger",
+        "type": "TooltipTrigger",
+        "description": "How tooltip is triggered: hover, focus, click",
+        "default": "'hover'"
+      },
+      {
+        "name": "visible",
+        "type": "boolean",
+        "description": "Whether tooltip is visible (controlled mode)"
+      },
+      {
+        "name": "arrow",
+        "type": "boolean",
+        "description": "Whether to show arrow pointer",
+        "default": "true"
+      },
+      {
+        "name": "color",
+        "type": "string",
+        "description": "Background color of tooltip",
+        "default": "''"
+      },
+      {
+        "name": "mouse-enter-delay",
+        "type": "number",
+        "description": "Delay in seconds before showing (hover)"
+      },
+      {
+        "name": "mouse-leave-delay",
+        "type": "number",
+        "description": "Delay in seconds before hiding (hover)"
+      }
+    ],
+    "events": [
+      {
+        "name": "visible-change",
+        "description": "Dispatched when visibility changes"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Target element that triggers tooltip"
+      },
+      {
+        "name": "content",
+        "description": "Custom tooltip content (overrides title property)"
+      }
+    ],
+    "examples": []
+  },
+  "mx-typography": {
+    "tag": "mx-typography",
+    "name": "Typography",
+    "category": "General",
+    "path": "/components/mx-typography.html",
+    "description": "Typography component for text and headings with semantic styling. <!-- Title variants --> <mx-typography variant=\"title\" level=\"1\">H1 Title</mx-typography> <mx-typography variant=\"title\" level=\"2\">H2 Title</mx-typography> <!-- Text with semantic types --> <mx-typography type=\"secondary\">Secondary text</mx-typography> <mx-typography type=\"success\">Success text</mx-typography> <mx-typography type=\"warning\">Warning text</mx-typography> <mx-typography type=\"danger\">Danger text</mx-typography> <!-- Modifiers --> <mx-typography strong>Bold text</mx-typography> <mx-typography italic>Italic text</mx-typography> <mx-typography underline>Underlined text</mx-typography> <mx-typography delete>Deleted text</mx-typography> <mx-typography code>Code text</mx-typography> <mx-typography mark>Marked text</mx-typography> <mx-typography keyboard>Ctrl + C</mx-typography> <!-- Paragraph --> <mx-typography variant=\"paragraph\">   This is a paragraph of text. </mx-typography> ```",
+    "element": "mx-typography",
+    "properties": [
+      {
+        "name": "variant",
+        "type": "TypographyVariant",
+        "description": "Component variant: title, text, paragraph",
+        "default": "'text'"
+      },
+      {
+        "name": "level",
+        "type": "TitleLevel",
+        "description": "Title level (1-5, only for variant=\"title\")",
+        "default": "1"
+      },
+      {
+        "name": "type",
+        "type": "TypographyType",
+        "description": "Semantic type: secondary, success, warning, danger"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "Disabled state",
+        "default": "false"
+      },
+      {
+        "name": "mark",
+        "type": "boolean",
+        "description": "Highlighted text",
+        "default": "false"
+      },
+      {
+        "name": "code",
+        "type": "boolean",
+        "description": "Code style",
+        "default": "false"
+      },
+      {
+        "name": "keyboard",
+        "type": "boolean",
+        "description": "Keyboard shortcut style",
+        "default": "false"
+      },
+      {
+        "name": "underline",
+        "type": "boolean",
+        "description": "Underlined text",
+        "default": "false"
+      },
+      {
+        "name": "delete",
+        "type": "boolean",
+        "description": "Strikethrough text",
+        "default": "false"
+      },
+      {
+        "name": "strong",
+        "type": "boolean",
+        "description": "Bold text",
+        "default": "false"
+      },
+      {
+        "name": "italic",
+        "type": "boolean",
+        "description": "Italic text",
+        "default": "false"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Text content"
+      }
+    ],
+    "examples": []
+  },
+  "mx-upload": {
+    "tag": "mx-upload",
+    "name": "Upload",
+    "category": "Data Entry",
+    "path": "/components/mx-upload.html",
+    "description": "Upload component - File upload with drag-drop",
+    "element": "mx-upload",
+    "properties": [],
+    "events": [
+      {
+        "name": "change",
+        "description": "Dispatched when file list changes"
+      },
+      {
+        "name": "preview",
+        "description": "Dispatched when preview is requested"
+      },
+      {
+        "name": "remove",
+        "description": "Dispatched when file is removed"
+      },
+      {
+        "name": "download",
+        "description": "Dispatched when download is requested"
+      }
+    ],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Custom upload button/trigger"
+      }
+    ],
+    "examples": []
+  },
+  "mx-watermark": {
+    "tag": "mx-watermark",
+    "name": "Watermark",
+    "category": "Other",
+    "path": "/components/mx-watermark.html",
+    "description": "Watermark component that adds watermark overlay to content. <mx-watermark content=\"Confidential\">   <div>Protected content here</div> </mx-watermark> ```",
+    "element": "mx-watermark",
+    "properties": [
+      {
+        "name": "content",
+        "type": "string",
+        "description": "Watermark text content",
+        "default": "''"
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "description": "Width of watermark (default 120)",
+        "default": "120"
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "description": "Height of watermark (default 64)",
+        "default": "64"
+      },
+      {
+        "name": "rotate",
+        "type": "number",
+        "description": "Rotation angle in degrees (default -22)",
+        "default": "-22"
+      },
+      {
+        "name": "z-index",
+        "type": "number",
+        "description": "Z-index of watermark (default 9)"
+      },
+      {
+        "name": "font-size",
+        "type": "string",
+        "description": "Font size (default 16px)"
+      },
+      {
+        "name": "font-color",
+        "type": "string",
+        "description": "Font color (default rgba(0,0,0,.15))"
+      },
+      {
+        "name": "font-family",
+        "type": "string",
+        "description": "Font family"
+      },
+      {
+        "name": "font-weight",
+        "type": "string",
+        "description": "Font weight (default normal)"
+      },
+      {
+        "name": "gap-x",
+        "type": "number",
+        "description": "Horizontal gap between watermarks (default 100)"
+      },
+      {
+        "name": "gap-y",
+        "type": "number",
+        "description": "Vertical gap between watermarks (default 100)"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "-",
+        "description": "Content to overlay watermark on"
+      }
+    ],
+    "examples": []
+  }
+}

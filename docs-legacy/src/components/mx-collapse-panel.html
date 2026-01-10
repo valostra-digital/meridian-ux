@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Collapse panel component (child of mx-collapse).    Panel content here  ```">
+  <title>Collapse - Meridian UX</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/prism-theme.css">
+  
+  <!-- Component Library -->
+  <script type="module" src="../vendor/index.js"></script>
+</head>
+<body>
+  <div class="docs-layout">
+    <!-- Header -->
+    <header class="docs-header">
+      <button class="docs-header__mobile-toggle" aria-label="Toggle menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      
+      <a href="../index.html" class="docs-header__logo">
+        <span class="docs-header__logo-text">MERIDIAN UX</span>
+      </a>
+      
+      <nav class="docs-header__nav">
+        <div class="docs-header__search">
+          <svg class="docs-header__search-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/>
+          </svg>
+          <input type="text" class="docs-header__search-input" placeholder="Search components..." />
+        </div>
+        
+        <ul class="docs-header__links">
+          <li><a href="../getting-started.html" class="docs-header__link">Getting Started</a></li>
+          <li><a href="https://github.com/valostra-digital/meridian-ux" target="_blank" class="docs-header__link">GitHub</a></li>
+        </ul>
+        
+        <button class="docs-header__theme-toggle" aria-label="Toggle theme"></button>
+      </nav>
+    </header>
+
+    <div class="docs-main">
+      <!-- Sidebar -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar__inner">
+          
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Navigation</div>
+        <ul class="docs-sidebar__menu">
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-affix.html">Affix</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-anchor-link.html">Anchor</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-anchor.html">Anchor</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-back-top.html">Back Top</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-breadcrumb-item.html">Breadcrumb</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-breadcrumb.html">Breadcrumb</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-dropdown.html">Dropdown</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-menu-item.html">Menu</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-menu.html">Menu</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-sub-menu.html">Menu</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-pagination.html">Pagination</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-step.html">Steps</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-steps.html">Steps</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-tab-pane.html">Tabs</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-tabs.html">Tabs</a>
+          </li>
+        </ul>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Feedback</div>
+        <ul class="docs-sidebar__menu">
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-alert.html">Alert</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-drawer.html">Drawer</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-message.html">Message</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-modal.html">Modal</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-notification.html">Notification</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-popconfirm.html">Popconfirm</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-progress.html">Progress</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-result.html">Result</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-skeleton.html">Skeleton</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-spin.html">Spin</a>
+          </li>
+        </ul>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Other</div>
+        <ul class="docs-sidebar__menu">
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-app.html">App</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-float-button.html">Float Button</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-theme.html">Theme</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-watermark.html">Watermark</a>
+          </li>
+        </ul>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Data Entry</div>
+        <ul class="docs-sidebar__menu">
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-auto-complete.html">Auto Complete</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-checkbox.html">Checkbox</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-color-picker.html">Color Picker</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-date-picker.html">Date Picker</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-form-item.html">Form</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-form.html">Form</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-input-password.html">Input</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-input-textarea.html">Input</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-input.html">Input</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-input-number.html">Input Number</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-mention.html">Mention</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-radio.html">Radio</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-rate.html">Rate</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-select.html">Select</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-slider.html">Slider</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-switch.html">Switch</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-time-picker.html">Time Picker</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-upload.html">Upload</a>
+          </li>
+        </ul>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Data Display</div>
+        <ul class="docs-sidebar__menu">
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-avatar.html">Avatar</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-badge.html">Badge</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-card.html">Card</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-carousel.html">Carousel</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-collapse-panel.html" class="active">Collapse</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-collapse.html">Collapse</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-descriptions-item.html">Descriptions</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-descriptions.html">Descriptions</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-empty.html">Empty</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-image.html">Image</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-list-item.html">List</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-list.html">List</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-popover.html">Popover</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-qr-code.html">Qr Code</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-segmented.html">Segmented</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-statistic.html">Statistic</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-tag.html">Tag</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-timeline-item.html">Timeline</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-timeline.html">Timeline</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-tooltip.html">Tooltip</a>
+          </li>
+        </ul>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">General</div>
+        <ul class="docs-sidebar__menu">
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-button.html">Button</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-icon.html">Icon</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-typography.html">Typography</a>
+          </li>
+        </ul>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Layout</div>
+        <ul class="docs-sidebar__menu">
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-divider.html">Divider</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-flex.html">Flex</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-col.html">Grid</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-row.html">Grid</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-content.html">Layout</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-footer.html">Layout</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-header.html">Layout</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-layout.html">Layout</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-sider.html">Layout</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-masonry.html">Masonry</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-space.html">Space</a>
+          </li>
+          <li class="docs-sidebar__menu-item">
+            <a href="mx-splitter.html">Splitter</a>
+          </li>
+        </ul>
+      </div>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <main class="docs-content">
+        <div class="docs-content__inner">
+          <!-- Breadcrumb -->
+          <nav class="docs-breadcrumb">
+            <a href="../index.html" class="docs-breadcrumb__link">Home</a>
+            <span class="docs-breadcrumb__separator">/</span>
+            <span class="docs-breadcrumb__link">Data Display</span>
+            <span class="docs-breadcrumb__separator">/</span>
+            <span class="docs-breadcrumb__current">Collapse</span>
+          </nav>
+
+          <!-- Component Header -->
+          <div class="component-header">
+            <h1 class="component-header__title">
+              Collapse
+              <span class="component-header__tag">mx-collapse-panel</span>
+            </h1>
+            <p class="component-header__description">Collapse panel component (child of mx-collapse). <mx-collapse-panel key="1" header="Panel Title">   Panel content here </mx-collapse-panel></p>
+          </div>
+
+          <!-- Examples Section -->
+          <section class="docs-section">
+            <h2 class="docs-section__title">Examples</h2>
+            
+    <div class="demo-card">
+      <div class="demo-card__header">
+        <span class="demo-card__title">Basic Usage</span>
+        <div class="demo-card__actions">
+          <button class="demo-card__action-btn" data-action="code" title="View code">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.854 4.146a.5.5 0 010 .708L1.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm6.292 0a.5.5 0 000 .708L14.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="demo-card__content">
+        <mx-collapse-panel>
+  Example Collapse Content
+</mx-collapse-panel>
+      </div>
+      <div class="demo-card__description">Basic Collapse component with default settings.</div>
+      <div class="demo-card__code">
+        <pre><code class="language-html">&lt;mx-collapse-panel&gt;
+  Example Collapse Content
+&lt;/mx-collapse-panel&gt;</code></pre>
+      </div>
+    </div>
+  
+
+    <div class="demo-card">
+      <div class="demo-card__header">
+        <span class="demo-card__title">Advanced Usage</span>
+        <div class="demo-card__actions">
+          <button class="demo-card__action-btn" data-action="code" title="View code">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.854 4.146a.5.5 0 010 .708L1.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm6.292 0a.5.5 0 000 .708L14.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="demo-card__content">
+        <mx-collapse-panel key="''" header="''" active disabled>
+  Advanced Collapse
+</mx-collapse-panel>
+      </div>
+      <div class="demo-card__description">Collapse with additional options and customization.</div>
+      <div class="demo-card__code">
+        <pre><code class="language-html">&lt;mx-collapse-panel key=&quot;&#039;&#039;&quot; header=&quot;&#039;&#039;&quot; active disabled&gt;
+  Advanced Collapse
+&lt;/mx-collapse-panel&gt;</code></pre>
+      </div>
+    </div>
+  
+          </section>
+
+          <!-- API Section -->
+          <section class="docs-section">
+            <h2 class="docs-section__title">API Reference</h2>
+            
+      <h3 class="docs-section__subtitle">Properties</h3>
+      <div class="api-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="api-table__name">key</span></td>
+              <td><span class="api-table__type">string</span></td>
+              <td><span class="api-table__default">''</span></td>
+              <td>Unique key for the panel</td>
+            </tr>
+            <tr>
+              <td><span class="api-table__name">header</span></td>
+              <td><span class="api-table__type">string</span></td>
+              <td><span class="api-table__default">''</span></td>
+              <td>Panel header text</td>
+            </tr>
+            <tr>
+              <td><span class="api-table__name">active</span></td>
+              <td><span class="api-table__type">boolean</span></td>
+              <td><span class="api-table__default">false</span></td>
+              <td>Whether panel is expanded</td>
+            </tr>
+            <tr>
+              <td><span class="api-table__name">disabled</span></td>
+              <td><span class="api-table__type">boolean</span></td>
+              <td><span class="api-table__default">false</span></td>
+              <td>Whether panel is disabled</td>
+            </tr>
+            <tr>
+              <td><span class="api-table__name">show-arrow</span></td>
+              <td><span class="api-table__type">boolean</span></td>
+              <td><span class="api-table__default">-</span></td>
+              <td>Whether to show expand arrow</td>
+            </tr>
+            <tr>
+              <td><span class="api-table__name">collapsible</span></td>
+              <td><span class="api-table__type">boolean</span></td>
+              <td><span class="api-table__default">''</span></td>
+              <td>Whether panel can be collapsed: header, disabled</td>
+            </tr>
+            <tr>
+              <td><span class="api-table__name">expand-icon-position</span></td>
+              <td><span class="api-table__type">string</span></td>
+              <td><span class="api-table__default">-</span></td>
+              <td>Position of expand icon: start, end</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="docs-section__subtitle">Slots</h3>
+      <div class="api-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Slot</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="api-table__name">(default)</span></td>
+              <td>Panel content</td>
+            </tr>
+            <tr>
+              <td><span class="api-table__name">header</span></td>
+              <td>Custom header content</td>
+            </tr>
+            <tr>
+              <td><span class="api-table__name">extra</span></td>
+              <td>Extra content in header (right side)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="docs-footer">
+      <p>
+        Built with ❤️ by <a href="https://github.com/valostra-digital" target="_blank">Valostra Digital</a>
+        • Licensed under MIT
+      </p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script type="module" src="../scripts/main.js"></script>
+  <script type="module" src="../scripts/search.js"></script>
+  <script type="module" src="../scripts/code-copy.js"></script>
+  <script>
+    // Setup demo code toggles
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.docsApp) {
+        window.docsApp.setupDemoCodeToggle();
+      }
+    });
+  </script>
+</body>
+</html>

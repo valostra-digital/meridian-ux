@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get started with Meridian UX - Installation, setup, and first steps">
+  <title>Getting Started - Meridian UX</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  <link rel="stylesheet" href="/styles/prism-theme.css">
+</head>
+<body>
+  <div class="docs-layout">
+    <!-- Header -->
+    <header class="docs-header">
+      <button class="docs-header__mobile-toggle" aria-label="Toggle menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      
+      <a href="/" class="docs-header__logo">
+        <span class="docs-header__logo-text">MERIDIAN UX</span>
+      </a>
+      
+      <nav class="docs-header__nav">
+        <div class="docs-header__search">
+          <svg class="docs-header__search-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/>
+          </svg>
+          <input type="text" class="docs-header__search-input" placeholder="Search components..." />
+        </div>
+        
+        <ul class="docs-header__links">
+          <li><a href="/getting-started.html" class="docs-header__link">Getting Started</a></li>
+          <li><a href="https://github.com/valostra-digital/meridian-ux" target="_blank" class="docs-header__link">GitHub</a></li>
+        </ul>
+        
+        <button class="docs-header__theme-toggle" aria-label="Toggle theme"></button>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <main class="docs-content">
+      <div class="docs-content__inner" style="max-width: 900px;">
+        <!-- Breadcrumb -->
+        <nav class="docs-breadcrumb">
+          <a href="/" class="docs-breadcrumb__link">Home</a>
+          <span class="docs-breadcrumb__separator">/</span>
+          <span class="docs-breadcrumb__current">Getting Started</span>
+        </nav>
+
+        <h1>Getting Started</h1>
+        <p class="hero__subtitle">Learn how to install and use Meridian UX in your project</p>
+
+        <!-- Installation -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Installation</h2>
+          
+          <p>Install Meridian UX via npm or yarn:</p>
+          
+          <pre><code class="language-bash">npm install @meridian-ux/components</code></pre>
+          
+          <p>Or with yarn:</p>
+          
+          <pre><code class="language-bash">yarn add @meridian-ux/components</code></pre>
+        </section>
+
+        <!-- Basic Usage -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Basic Usage</h2>
+          
+          <h3 class="docs-section__subtitle">Import All Components</h3>
+          <p>The simplest way to use Meridian UX is to import all components at once:</p>
+          
+          <pre><code class="language-javascript">// Import all components
+import '@meridian-ux/components';
+
+// Now all mx-* components are available
+</code></pre>
+
+          <h3 class="docs-section__subtitle">Import Specific Components</h3>
+          <p>For better tree-shaking and smaller bundle sizes, import only the components you need:</p>
+          
+          <pre><code class="language-javascript">// Import specific components
+import '@meridian-ux/components/mx-button';
+import '@meridian-ux/components/mx-input';
+import '@meridian-ux/components/mx-card';
+</code></pre>
+
+          <h3 class="docs-section__subtitle">Use in HTML</h3>
+          <p>Once imported, use the components like any other HTML element:</p>
+          
+          <pre><code class="language-html">&lt;mx-button type="primary"&gt;Click Me&lt;/mx-button&gt;
+
+&lt;mx-input 
+  placeholder="Enter your name"
+  label="Name"
+&gt;&lt;/mx-input&gt;
+
+&lt;mx-card title="Welcome"&gt;
+  &lt;p&gt;This is a card component&lt;/p&gt;
+&lt;/mx-card&gt;</code></pre>
+        </section>
+
+        <!-- Framework Integration -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Framework Integration</h2>
+          
+          <h3 class="docs-section__subtitle">React</h3>
+          <pre><code class="language-javascript">import '@meridian-ux/components';
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;mx-button type="primary"&gt;React Button&lt;/mx-button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+
+          <h3 class="docs-section__subtitle">Vue</h3>
+          <pre><code class="language-javascript">// main.js
+import '@meridian-ux/components';
+
+// In your component
+&lt;template&gt;
+  &lt;mx-button type="primary"&gt;Vue Button&lt;/mx-button&gt;
+&lt;/template&gt;</code></pre>
+
+          <h3 class="docs-section__subtitle">Angular</h3>
+          <pre><code class="language-typescript">// app.module.ts
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import '@meridian-ux/components';
+
+@NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class AppModule { }</code></pre>
+
+          <h3 class="docs-section__subtitle">Svelte</h3>
+          <pre><code class="language-javascript">// In your component
+&lt;script&gt;
+  import '@meridian-ux/components';
+&lt;/script&gt;
+
+&lt;mx-button type="primary"&gt;Svelte Button&lt;/mx-button&gt;</code></pre>
+
+          <h3 class="docs-section__subtitle">Vanilla JavaScript</h3>
+          <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type="module"&gt;
+    import '@meridian-ux/components';
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;mx-button type="primary"&gt;Click Me&lt;/mx-button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <!-- TypeScript Support -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">TypeScript Support</h2>
+          
+          <p>Meridian UX is built with TypeScript and provides full type definitions. TypeScript will automatically pick up the types when you import components.</p>
+          
+          <pre><code class="language-typescript">import '@meridian-ux/components/mx-button';
+
+// TypeScript knows about MxButton and its properties
+const button = document.querySelector('mx-button');
+button.type = 'primary';
+button.size = 'large';
+button.disabled = true;</code></pre>
+        </section>
+
+        <!-- Customization -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Customization</h2>
+          
+          <p>Meridian UX uses CSS variables for theming. You can customize the design by overriding these variables:</p>
+          
+          <pre><code class="language-css">:root {
+  --mx-primary-color: #1677ff;
+  --mx-font-family: 'Your Custom Font', sans-serif;
+  --mx-border-radius: 8px;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --mx-primary-color: #4096ff;
+}</code></pre>
+
+          <p>See the <a href="/theming.html">Theming Guide</a> for more details.</p>
+        </section>
+
+        <!-- Browser Support -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Browser Support</h2>
+          
+          <p>Meridian UX supports all modern browsers:</p>
+          
+          <ul style="margin-left: 24px; color: var(--color-text-secondary);">
+            <li>Chrome/Edge (latest 2 versions)</li>
+            <li>Firefox (latest 2 versions)</li>
+            <li>Safari (latest 2 versions)</li>
+            <li>iOS Safari (latest 2 versions)</li>
+            <li>Android Chrome (latest version)</li>
+          </ul>
+          
+          <p style="margin-top: 16px;">Web Components are natively supported in all modern browsers. No polyfills required.</p>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Next Steps</h2>
+          
+          <div class="features" style="grid-template-columns: repeat(2, 1fr);">
+            <a href="/components/mx-button.html" class="feature-card" style="text-decoration: none;">
+              <h3 class="feature-card__title">Explore Components</h3>
+              <p class="feature-card__description">
+                Browse through 63+ components with live examples and API documentation.
+              </p>
+            </a>
+            
+            <a href="/theming.html" class="feature-card" style="text-decoration: none;">
+              <h3 class="feature-card__title">Theming Guide</h3>
+              <p class="feature-card__description">
+                Learn how to customize colors, spacing, and create your own theme.
+              </p>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="docs-footer">
+      <p>
+        Built with ❤️ by <a href="https://github.com/valostra-digital" target="_blank">Valostra Digital</a>
+        • Licensed under MIT
+      </p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+  <script type="module" src="/scripts/main.js"></script>
+  <script type="module" src="/scripts/search.js"></script>
+  <script type="module" src="/scripts/code-copy.js"></script>
+</body>
+</html>

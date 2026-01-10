@@ -1,0 +1,232 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { LitElement, html, css } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
+/**
+ * QR Code component for generating QR codes.
+ *
+ * @element mx-qr-code
+ *
+ * @attr {string} value - Value to encode in QR code
+ * @attr {number} size - Size of QR code in pixels (default 160)
+ * @attr {string} color - Color of QR code (default #000000)
+ * @attr {string} bg-color - Background color (default #ffffff)
+ * @attr {QRCodeLevel} error-level - Error correction level: L, M, Q, H
+ * @attr {string} icon - Icon image URL for center
+ * @attr {number} icon-size - Icon size (default 40)
+ * @attr {boolean} bordered - Whether to show border
+ * @attr {QRCodeStatus} status - Status: active, expired, loading
+ *
+ * @example
+ * ```html
+ * <mx-qr-code
+ *   value="https://example.com"
+ *   size="200"
+ *   bordered
+ * ></mx-qr-code>
+ * ```
+ */
+let MXQRCode = class MXQRCode extends LitElement {
+    constructor() {
+        super(...arguments);
+        this.value = '';
+        this.size = 160;
+        this.color = '#000000';
+        this.bgColor = '#ffffff';
+        this.errorLevel = 'M';
+        this.icon = '';
+        this.iconSize = 40;
+        this.bordered = false;
+        this.status = 'active';
+        this.qrDataUrl = '';
+    }
+    updated(changedProperties) {
+        if (changedProperties.has('value') ||
+            changedProperties.has('size') ||
+            changedProperties.has('color') ||
+            changedProperties.has('bgColor')) {
+            this.generateQRCode();
+        }
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        this.generateQRCode();
+    }
+    generateQRCode() {
+        if (!this.value)
+            return;
+        // Simple QR code generation using canvas
+        // In production, you'd use a library like qrcode.js
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        if (!ctx)
+            return;
+        canvas.width = this.size;
+        canvas.height = this.size;
+        // Fill background
+        ctx.fillStyle = this.bgColor;
+        ctx.fillRect(0, 0, this.size, this.size);
+        // Draw a simple pattern (placeholder - real QR would use qrcode library)
+        // This is just a visual representation
+        ctx.fillStyle = this.color;
+        const moduleSize = this.size / 25;
+        // Draw finder patterns (corners)
+        this.drawFinderPattern(ctx, 0, 0, moduleSize);
+        this.drawFinderPattern(ctx, this.size - 7 * moduleSize, 0, moduleSize);
+        this.drawFinderPattern(ctx, 0, this.size - 7 * moduleSize, moduleSize);
+        // Draw some data modules (simplified)
+        for (let i = 0; i < 25; i++) {
+            for (let j = 0; j < 25; j++) {
+                if (Math.random() > 0.5) {
+                    ctx.fillRect(i * moduleSize, j * moduleSize, moduleSize, moduleSize);
+                }
+            }
+        }
+        // Add icon if provided
+        if (this.icon) {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = () => {
+                const iconX = (this.size - this.iconSize) / 2;
+                const iconY = (this.size - this.iconSize) / 2;
+                // White background for icon
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(iconX - 4, iconY - 4, this.iconSize + 8, this.iconSize + 8);
+                ctx.drawImage(img, iconX, iconY, this.iconSize, this.iconSize);
+                this.qrDataUrl = canvas.toDataURL();
+            };
+            img.src = this.icon;
+        }
+        else {
+            this.qrDataUrl = canvas.toDataURL();
+        }
+    }
+    drawFinderPattern(ctx, x, y, moduleSize) {
+        // Outer square
+        ctx.fillRect(x, y, moduleSize * 7, moduleSize * 7);
+        ctx.fillStyle = this.bgColor;
+        ctx.fillRect(x + moduleSize, y + moduleSize, moduleSize * 5, moduleSize * 5);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(x + moduleSize * 2, y + moduleSize * 2, moduleSize * 3, moduleSize * 3);
+    }
+    render() {
+        const classes = {
+            'mx-qr-code': true,
+            'mx-qr-code-bordered': this.bordered
+        };
+        return html `
+      <div class=${classes}>
+        ${this.status === 'active' ? html `
+          <canvas 
+            class="mx-qr-code-canvas"
+            width=${this.size}
+            height=${this.size}
+            style="width: ${this.size}px; height: ${this.size}px;"
+          >
+            ${this.qrDataUrl ? html `
+              <img src=${this.qrDataUrl} alt="QR Code" />
+            ` : null}
+          </canvas>
+        ` : null}
+
+        ${this.status === 'loading' ? html `
+          <div class="mx-qr-code-overlay">
+            <mx-spin></mx-spin>
+          </div>
+        ` : null}
+
+        ${this.status === 'expired' ? html `
+          <div class="mx-qr-code-overlay">
+            <div class="mx-qr-code-expired">
+              <div class="mx-qr-code-expired-icon">⌛</div>
+              <div>QR code expired</div>
+            </div>
+          </div>
+        ` : null}
+      </div>
+    `;
+    }
+};
+MXQRCode.styles = css `
+    :host {
+      display: inline-block;
+      font-family: var(--mx-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    }
+
+    .mx-qr-code {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background: var(--mx-color-bg-container, #ffffff);
+    }
+
+    .mx-qr-code-bordered {
+      border: 1px solid var(--mx-color-border, #d9d9d9);
+      border-radius: var(--mx-border-radius, 6px);
+    }
+
+    .mx-qr-code-canvas {
+      display: block;
+    }
+
+    .mx-qr-code-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--mx-border-radius, 6px);
+    }
+
+    .mx-qr-code-expired {
+      text-align: center;
+      color: var(--mx-color-text-secondary, rgba(0, 0, 0, 0.45));
+    }
+
+    .mx-qr-code-expired-icon {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+  `;
+__decorate([
+    property({ type: String })
+], MXQRCode.prototype, "value", void 0);
+__decorate([
+    property({ type: Number })
+], MXQRCode.prototype, "size", void 0);
+__decorate([
+    property({ type: String })
+], MXQRCode.prototype, "color", void 0);
+__decorate([
+    property({ type: String, attribute: 'bg-color' })
+], MXQRCode.prototype, "bgColor", void 0);
+__decorate([
+    property({ type: String, attribute: 'error-level' })
+], MXQRCode.prototype, "errorLevel", void 0);
+__decorate([
+    property({ type: String })
+], MXQRCode.prototype, "icon", void 0);
+__decorate([
+    property({ type: Number, attribute: 'icon-size' })
+], MXQRCode.prototype, "iconSize", void 0);
+__decorate([
+    property({ type: Boolean })
+], MXQRCode.prototype, "bordered", void 0);
+__decorate([
+    property({ type: String })
+], MXQRCode.prototype, "status", void 0);
+__decorate([
+    state()
+], MXQRCode.prototype, "qrDataUrl", void 0);
+MXQRCode = __decorate([
+    customElement('mx-qr-code')
+], MXQRCode);
+export { MXQRCode };
+//# sourceMappingURL=mx-qr-code.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"mx-list-item.d.ts","sourceRoot":"","sources":["../../src/mx-list/mx-list-item.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAa,MAAM,KAAK,CAAC;AAI5C;;;;;;;;;;;;;;;;GAgBG;AACH,qBACa,UAAW,SAAQ,UAAU;IACxC,MAAM,CAAC,MAAM,0BAsCX;IAEF,MAAM;CAwBP;AAED,OAAO,CAAC,MAAM,CAAC;IACb,UAAU,qBAAqB;QAC7B,cAAc,EAAE,UAAU,CAAC;KAC5B;CACF"}

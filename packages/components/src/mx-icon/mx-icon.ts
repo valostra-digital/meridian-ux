@@ -1,0 +1,122 @@
+import { LitElement, html, css } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
+
+/**
+ * Icon component for displaying SVG icons.
+ * 
+ * @element mx-icon
+ * 
+ * @attr {string} svg - Raw SVG string to render
+ * @attr {boolean} spin - Rotate icon with animation
+ * @attr {number} rotate - Rotate icon by specified degrees
+ * 
+ * @slot - Default slot for icon content (if svg prop not provided)
+ * 
+ * @example
+ * ```html
+ * <!-- Using svg prop -->
+ * <mx-icon svg="<svg>...</svg>"></mx-icon>
+ * 
+ * <!-- Spinning icon -->
+ * <mx-icon spin svg="<svg>...</svg>"></mx-icon>
+ * 
+ * <!-- Rotated icon -->
+ * <mx-icon rotate="90" svg="<svg>...</svg>"></mx-icon>
+ * 
+ * <!-- Using slot -->
+ * <mx-icon>
+ *   <svg>...</svg>
+ * </mx-icon>
+ * ```
+ */
+@customElement('mx-icon')
+export class MXIcon extends LitElement {
+  static styles = css`
+    :host {
+      display: inline-block;
+      color: inherit;
+      font-style: normal;
+      line-height: 0;
+      text-align: center;
+      text-transform: none;
+      vertical-align: -0.125em;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .mx-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    .mx-icon-spin {
+      animation: iconSpin 1s infinite linear;
+    }
+
+    /* SVG sizing */
+    svg {
+      fill: currentColor;
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+    }
+
+    ::slotted(svg) {
+      fill: currentColor;
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+    }
+
+    @keyframes iconSpin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  `;
+
+  /**
+   * Raw SVG string to render
+   */
+  @property({ type: String })
+  svg = '';
+
+  /**
+   * Rotate icon with animation
+   */
+  @property({ type: Boolean, reflect: true })
+  spin = false;
+
+  /**
+   * Rotate icon by specified degrees (static rotation)
+   */
+  @property({ type: Number })
+  rotate?: number;
+
+  render() {
+    const style = this.rotate ? `transform: rotate(${this.rotate}deg)` : '';
+    const classes = `mx-icon ${this.spin ? 'mx-icon-spin' : ''}`;
+
+    return html`
+      <span 
+        role="img" 
+        aria-hidden="true"
+        class="${classes}" 
+        style=${style}
+      >
+        ${this.svg ? unsafeSVG(this.svg) : html`<slot></slot>`}
+      </span>
+    `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mx-icon': MXIcon;
+  }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Theming guide for Meridian UX - Customize colors, spacing, and create custom themes">
+  <title>Theming - Meridian UX</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  <link rel="stylesheet" href="/styles/prism-theme.css">
+</head>
+<body>
+  <div class="docs-layout">
+    <!-- Header -->
+    <header class="docs-header">
+      <button class="docs-header__mobile-toggle" aria-label="Toggle menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      
+      <a href="/" class="docs-header__logo">
+        <span class="docs-header__logo-text">MERIDIAN UX</span>
+      </a>
+      
+      <nav class="docs-header__nav">
+        <div class="docs-header__search">
+          <svg class="docs-header__search-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/>
+          </svg>
+          <input type="text" class="docs-header__search-input" placeholder="Search components..." />
+        </div>
+        
+        <ul class="docs-header__links">
+          <li><a href="/getting-started.html" class="docs-header__link">Getting Started</a></li>
+          <li><a href="https://github.com/valostra-digital/meridian-ux" target="_blank" class="docs-header__link">GitHub</a></li>
+        </ul>
+        
+        <button class="docs-header__theme-toggle" aria-label="Toggle theme"></button>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <main class="docs-content">
+      <div class="docs-content__inner" style="max-width: 900px;">
+        <!-- Breadcrumb -->
+        <nav class="docs-breadcrumb">
+          <a href="/" class="docs-breadcrumb__link">Home</a>
+          <span class="docs-breadcrumb__separator">/</span>
+          <span class="docs-breadcrumb__current">Theming</span>
+        </nav>
+
+        <h1>Theming</h1>
+        <p class="hero__subtitle">Customize Meridian UX to match your brand</p>
+
+        <!-- CSS Variables -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">CSS Variables</h2>
+          
+          <p>Meridian UX uses CSS custom properties (variables) for theming. Override these variables to customize the appearance:</p>
+          
+          <pre><code class="language-css">:root {
+  /* Primary Colors */
+  --mx-primary-color: #1677ff;
+  --mx-primary-hover: #4096ff;
+  --mx-primary-active: #0958d9;
+  
+  /* Typography */
+  --mx-font-family: -apple-system, sans-serif;
+  --mx-font-size-base: 14px;
+  --mx-line-height-base: 1.5715;
+  
+  /* Spacing */
+  --mx-spacing-xs: 4px;
+  --mx-spacing-sm: 8px;
+  --mx-spacing-md: 16px;
+  --mx-spacing-lg: 24px;
+  --mx-spacing-xl: 32px;
+  
+  /* Border Radius */
+  --mx-border-radius-base: 6px;
+  --mx-border-radius-sm: 4px;
+  --mx-border-radius-lg: 8px;
+}</code></pre>
+        </section>
+
+        <!-- Dark Mode -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Dark Mode</h2>
+          
+          <p>Dark mode is supported out of the box. Toggle the theme using the button in the header or programmatically:</p>
+          
+          <pre><code class="language-javascript">// Set dark mode
+document.documentElement.setAttribute('data-theme', 'dark');
+
+// Set light mode
+document.documentElement.setAttribute('data-theme', 'light');
+
+// Toggle theme
+const current = document.documentElement.getAttribute('data-theme');
+const next = current === 'dark' ? 'light' : 'dark';
+document.documentElement.setAttribute('data-theme', next);</code></pre>
+
+          <p>Define dark mode colors:</p>
+          
+          <pre><code class="language-css">[data-theme="dark"] {
+  --mx-primary-color: #4096ff;
+  --mx-bg-base: #141414;
+  --mx-text-primary: rgba(255, 255, 255, 0.85);
+}</code></pre>
+        </section>
+
+        <!-- Custom Theme Example -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Custom Theme Example</h2>
+          
+          <p>Create a custom theme by overriding the CSS variables:</p>
+          
+          <pre><code class="language-css">/* Custom Purple Theme */
+:root {
+  --mx-primary-color: #722ed1;
+  --mx-primary-hover: #9254de;
+  --mx-primary-active: #531dab;
+  --mx-primary-bg: #f9f0ff;
+  --mx-primary-border: #d3adf7;
+  
+  --mx-border-radius-base: 12px;
+  --mx-font-family: 'Inter', sans-serif;
+}
+
+[data-theme="dark"] {
+  --mx-primary-color: #9254de;
+  --mx-primary-bg: #1a0033;
+  --mx-primary-border: #391085;
+}</code></pre>
+        </section>
+
+        <!-- Component-Specific Styling -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Component-Specific Styling</h2>
+          
+          <p>Target specific components using CSS:</p>
+          
+          <pre><code class="language-css">/* Style all buttons */
+mx-button {
+  --mx-button-height: 40px;
+  font-weight: 600;
+}
+
+/* Style specific button */
+mx-button.custom {
+  --mx-primary-color: #52c41a;
+}
+
+/* Style with part attribute (if exposed) */
+mx-button::part(button) {
+  border-radius: 20px;
+}</code></pre>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="docs-section">
+          <h2 class="docs-section__title">Best Practices</h2>
+          
+          <ul style="margin-left: 24px; color: var(--color-text-secondary); line-height: 2;">
+            <li>Define your theme variables in a central CSS file</li>
+            <li>Use consistent spacing values from the design system</li>
+            <li>Test your theme in both light and dark modes</li>
+            <li>Ensure sufficient color contrast for accessibility</li>
+            <li>Use relative units (rem, em) instead of fixed pixels when possible</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="docs-footer">
+      <p>
+        Built with ❤️ by <a href="https://github.com/valostra-digital" target="_blank">Valostra Digital</a>
+        • Licensed under MIT
+      </p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script type="module" src="/scripts/main.js"></script>
+  <script type="module" src="/scripts/search.js"></script>
+  <script type="module" src="/scripts/code-copy.js"></script>
+</body>
+</html>

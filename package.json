@@ -1,6 +1,7 @@
 {
   "name": "meridian-ux",
   "version": "1.0.0-alpha",
+  "type": "module",
   "description": "Enterprise web components based on Ant Design principles. Framework-agnostic, accessible, and built with Lit.",
   "repository": "https://github.com/valostra-digital/meridian-ux.git",
   "license": "MIT",
@@ -13,16 +14,19 @@
     "ui-components"
   ],
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "docs"
   ],
   "engines": {
-    "node": ">= 24.12.0"
+    "node": ">= 18.0.0"
   },
   "scripts": {
     "dev": "yarn workspace @meridian-ux/components dev",
     "build": "yarn workspace @meridian-ux/components build",
-    "build:docs": "yarn workspace @meridian-ux/components build:docs",
-    "docs:serve": "python3 -m http.server 8000"
+    "docs:generate": "node scripts/generate-docs-data.js && node scripts/generate-component-pages.js && cp -r docs/src/styles docs/public/ && cp -r docs/src/scripts docs/public/ && cp -r docs/src/data docs/public/ && mkdir -p docs/src/vendor && cp -r packages/components/dist/* docs/src/vendor/",
+    "docs:dev": "yarn docs:generate && yarn workspace @meridian-ux/docs dev",
+    "docs:build": "yarn build && yarn docs:generate && yarn workspace @meridian-ux/docs build",
+    "docs:preview": "yarn workspace @meridian-ux/docs preview"
   },
   "dependencies": {},
   "devDependencies": {}

@@ -1,0 +1,1 @@
+{"version":3,"file":"defaults.js","sourceRoot":"","sources":["../../src/mx-theme/defaults.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,MAAM,CAAC,MAAM,cAAc,GAAG;IAC5B,OAAO,EAAE,SAAS,EAAK,qCAAqC;IAC5D,OAAO,EAAE,SAAS,EAAK,UAAU;IACjC,OAAO,EAAE,SAAS,EAAK,SAAS;IAChC,KAAK,EAAE,SAAS,EAAO,QAAQ;IAC/B,IAAI,EAAE,SAAS,EAAQ,kBAAkB;CACjC,CAAC"}

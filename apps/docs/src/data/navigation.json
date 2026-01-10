@@ -1,0 +1,426 @@
+{
+  "Navigation": [
+    {
+      "tag": "mx-affix",
+      "name": "Affix",
+      "path": "/components/mx-affix.html"
+    },
+    {
+      "tag": "mx-anchor-link",
+      "name": "Anchor",
+      "path": "/components/mx-anchor-link.html"
+    },
+    {
+      "tag": "mx-anchor",
+      "name": "Anchor",
+      "path": "/components/mx-anchor.html"
+    },
+    {
+      "tag": "mx-back-top",
+      "name": "Back Top",
+      "path": "/components/mx-back-top.html"
+    },
+    {
+      "tag": "mx-breadcrumb-item",
+      "name": "Breadcrumb",
+      "path": "/components/mx-breadcrumb-item.html"
+    },
+    {
+      "tag": "mx-breadcrumb",
+      "name": "Breadcrumb",
+      "path": "/components/mx-breadcrumb.html"
+    },
+    {
+      "tag": "mx-dropdown",
+      "name": "Dropdown",
+      "path": "/components/mx-dropdown.html"
+    },
+    {
+      "tag": "mx-menu-item",
+      "name": "Menu",
+      "path": "/components/mx-menu-item.html"
+    },
+    {
+      "tag": "mx-menu",
+      "name": "Menu",
+      "path": "/components/mx-menu.html"
+    },
+    {
+      "tag": "mx-sub-menu",
+      "name": "Menu",
+      "path": "/components/mx-sub-menu.html"
+    },
+    {
+      "tag": "mx-pagination",
+      "name": "Pagination",
+      "path": "/components/mx-pagination.html"
+    },
+    {
+      "tag": "mx-step",
+      "name": "Steps",
+      "path": "/components/mx-step.html"
+    },
+    {
+      "tag": "mx-steps",
+      "name": "Steps",
+      "path": "/components/mx-steps.html"
+    },
+    {
+      "tag": "mx-tab-pane",
+      "name": "Tabs",
+      "path": "/components/mx-tab-pane.html"
+    },
+    {
+      "tag": "mx-tabs",
+      "name": "Tabs",
+      "path": "/components/mx-tabs.html"
+    }
+  ],
+  "Feedback": [
+    {
+      "tag": "mx-alert",
+      "name": "Alert",
+      "path": "/components/mx-alert.html"
+    },
+    {
+      "tag": "mx-drawer",
+      "name": "Drawer",
+      "path": "/components/mx-drawer.html"
+    },
+    {
+      "tag": "mx-message",
+      "name": "Message",
+      "path": "/components/mx-message.html"
+    },
+    {
+      "tag": "mx-modal",
+      "name": "Modal",
+      "path": "/components/mx-modal.html"
+    },
+    {
+      "tag": "mx-notification",
+      "name": "Notification",
+      "path": "/components/mx-notification.html"
+    },
+    {
+      "tag": "mx-popconfirm",
+      "name": "Popconfirm",
+      "path": "/components/mx-popconfirm.html"
+    },
+    {
+      "tag": "mx-progress",
+      "name": "Progress",
+      "path": "/components/mx-progress.html"
+    },
+    {
+      "tag": "mx-result",
+      "name": "Result",
+      "path": "/components/mx-result.html"
+    },
+    {
+      "tag": "mx-skeleton",
+      "name": "Skeleton",
+      "path": "/components/mx-skeleton.html"
+    },
+    {
+      "tag": "mx-spin",
+      "name": "Spin",
+      "path": "/components/mx-spin.html"
+    }
+  ],
+  "Other": [
+    {
+      "tag": "mx-app",
+      "name": "App",
+      "path": "/components/mx-app.html"
+    },
+    {
+      "tag": "mx-float-button",
+      "name": "Float Button",
+      "path": "/components/mx-float-button.html"
+    },
+    {
+      "tag": "mx-theme",
+      "name": "Theme",
+      "path": "/components/mx-theme.html"
+    },
+    {
+      "tag": "mx-watermark",
+      "name": "Watermark",
+      "path": "/components/mx-watermark.html"
+    }
+  ],
+  "Data Entry": [
+    {
+      "tag": "mx-auto-complete",
+      "name": "Auto Complete",
+      "path": "/components/mx-auto-complete.html"
+    },
+    {
+      "tag": "mx-checkbox",
+      "name": "Checkbox",
+      "path": "/components/mx-checkbox.html"
+    },
+    {
+      "tag": "mx-color-picker",
+      "name": "Color Picker",
+      "path": "/components/mx-color-picker.html"
+    },
+    {
+      "tag": "mx-date-picker",
+      "name": "Date Picker",
+      "path": "/components/mx-date-picker.html"
+    },
+    {
+      "tag": "mx-form-item",
+      "name": "Form",
+      "path": "/components/mx-form-item.html"
+    },
+    {
+      "tag": "mx-form",
+      "name": "Form",
+      "path": "/components/mx-form.html"
+    },
+    {
+      "tag": "mx-input-password",
+      "name": "Input",
+      "path": "/components/mx-input-password.html"
+    },
+    {
+      "tag": "mx-input-textarea",
+      "name": "Input",
+      "path": "/components/mx-input-textarea.html"
+    },
+    {
+      "tag": "mx-input",
+      "name": "Input",
+      "path": "/components/mx-input.html"
+    },
+    {
+      "tag": "mx-input-number",
+      "name": "Input Number",
+      "path": "/components/mx-input-number.html"
+    },
+    {
+      "tag": "mx-mention",
+      "name": "Mention",
+      "path": "/components/mx-mention.html"
+    },
+    {
+      "tag": "mx-radio",
+      "name": "Radio",
+      "path": "/components/mx-radio.html"
+    },
+    {
+      "tag": "mx-rate",
+      "name": "Rate",
+      "path": "/components/mx-rate.html"
+    },
+    {
+      "tag": "mx-select",
+      "name": "Select",
+      "path": "/components/mx-select.html"
+    },
+    {
+      "tag": "mx-slider",
+      "name": "Slider",
+      "path": "/components/mx-slider.html"
+    },
+    {
+      "tag": "mx-switch",
+      "name": "Switch",
+      "path": "/components/mx-switch.html"
+    },
+    {
+      "tag": "mx-time-picker",
+      "name": "Time Picker",
+      "path": "/components/mx-time-picker.html"
+    },
+    {
+      "tag": "mx-upload",
+      "name": "Upload",
+      "path": "/components/mx-upload.html"
+    }
+  ],
+  "Data Display": [
+    {
+      "tag": "mx-avatar",
+      "name": "Avatar",
+      "path": "/components/mx-avatar.html"
+    },
+    {
+      "tag": "mx-badge",
+      "name": "Badge",
+      "path": "/components/mx-badge.html"
+    },
+    {
+      "tag": "mx-card",
+      "name": "Card",
+      "path": "/components/mx-card.html"
+    },
+    {
+      "tag": "mx-carousel",
+      "name": "Carousel",
+      "path": "/components/mx-carousel.html"
+    },
+    {
+      "tag": "mx-collapse-panel",
+      "name": "Collapse",
+      "path": "/components/mx-collapse-panel.html"
+    },
+    {
+      "tag": "mx-collapse",
+      "name": "Collapse",
+      "path": "/components/mx-collapse.html"
+    },
+    {
+      "tag": "mx-descriptions-item",
+      "name": "Descriptions",
+      "path": "/components/mx-descriptions-item.html"
+    },
+    {
+      "tag": "mx-descriptions",
+      "name": "Descriptions",
+      "path": "/components/mx-descriptions.html"
+    },
+    {
+      "tag": "mx-empty",
+      "name": "Empty",
+      "path": "/components/mx-empty.html"
+    },
+    {
+      "tag": "mx-image",
+      "name": "Image",
+      "path": "/components/mx-image.html"
+    },
+    {
+      "tag": "mx-list-item",
+      "name": "List",
+      "path": "/components/mx-list-item.html"
+    },
+    {
+      "tag": "mx-list",
+      "name": "List",
+      "path": "/components/mx-list.html"
+    },
+    {
+      "tag": "mx-popover",
+      "name": "Popover",
+      "path": "/components/mx-popover.html"
+    },
+    {
+      "tag": "mx-qr-code",
+      "name": "Qr Code",
+      "path": "/components/mx-qr-code.html"
+    },
+    {
+      "tag": "mx-segmented",
+      "name": "Segmented",
+      "path": "/components/mx-segmented.html"
+    },
+    {
+      "tag": "mx-statistic",
+      "name": "Statistic",
+      "path": "/components/mx-statistic.html"
+    },
+    {
+      "tag": "mx-tag",
+      "name": "Tag",
+      "path": "/components/mx-tag.html"
+    },
+    {
+      "tag": "mx-timeline-item",
+      "name": "Timeline",
+      "path": "/components/mx-timeline-item.html"
+    },
+    {
+      "tag": "mx-timeline",
+      "name": "Timeline",
+      "path": "/components/mx-timeline.html"
+    },
+    {
+      "tag": "mx-tooltip",
+      "name": "Tooltip",
+      "path": "/components/mx-tooltip.html"
+    }
+  ],
+  "General": [
+    {
+      "tag": "mx-button",
+      "name": "Button",
+      "path": "/components/mx-button.html"
+    },
+    {
+      "tag": "mx-icon",
+      "name": "Icon",
+      "path": "/components/mx-icon.html"
+    },
+    {
+      "tag": "mx-typography",
+      "name": "Typography",
+      "path": "/components/mx-typography.html"
+    }
+  ],
+  "Layout": [
+    {
+      "tag": "mx-divider",
+      "name": "Divider",
+      "path": "/components/mx-divider.html"
+    },
+    {
+      "tag": "mx-flex",
+      "name": "Flex",
+      "path": "/components/mx-flex.html"
+    },
+    {
+      "tag": "mx-col",
+      "name": "Grid",
+      "path": "/components/mx-col.html"
+    },
+    {
+      "tag": "mx-row",
+      "name": "Grid",
+      "path": "/components/mx-row.html"
+    },
+    {
+      "tag": "mx-content",
+      "name": "Layout",
+      "path": "/components/mx-content.html"
+    },
+    {
+      "tag": "mx-footer",
+      "name": "Layout",
+      "path": "/components/mx-footer.html"
+    },
+    {
+      "tag": "mx-header",
+      "name": "Layout",
+      "path": "/components/mx-header.html"
+    },
+    {
+      "tag": "mx-layout",
+      "name": "Layout",
+      "path": "/components/mx-layout.html"
+    },
+    {
+      "tag": "mx-sider",
+      "name": "Layout",
+      "path": "/components/mx-sider.html"
+    },
+    {
+      "tag": "mx-masonry",
+      "name": "Masonry",
+      "path": "/components/mx-masonry.html"
+    },
+    {
+      "tag": "mx-space",
+      "name": "Space",
+      "path": "/components/mx-space.html"
+    },
+    {
+      "tag": "mx-splitter",
+      "name": "Splitter",
+      "path": "/components/mx-splitter.html"
+    }
+  ]
+}

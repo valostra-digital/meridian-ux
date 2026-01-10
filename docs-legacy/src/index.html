@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian UX - Enterprise web components based on Ant Design principles. Framework-agnostic, accessible, and built with Lit.">
+  <meta name="keywords" content="web components, lit, ant design, design system, ui components, meridian ux">
+  <title>Meridian UX - Enterprise Web Components</title>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Meridian UX - Enterprise Web Components">
+  <meta property="og:description" content="63+ framework-agnostic web components based on Ant Design principles">
+  <meta property="og:type" content="website">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  
+  <!-- Component Library -->
+  <script type="module" src="/vendor/index.js"></script>
+</head>
+<body>
+  <div class="docs-layout">
+    <!-- Header -->
+    <header class="docs-header">
+      <button class="docs-header__mobile-toggle" aria-label="Toggle menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      
+      <a href="/index.html" class="docs-header__logo">
+        <span class="docs-header__logo-text">MERIDIAN UX</span>
+      </a>
+      
+      <nav class="docs-header__nav">
+        <div class="docs-header__search">
+          <svg class="docs-header__search-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/>
+          </svg>
+          <input type="text" class="docs-header__search-input" placeholder="Search components..." />
+        </div>
+        
+        <ul class="docs-header__links">
+          <li><a href="/getting-started.html" class="docs-header__link">Getting Started</a></li>
+          <li><a href="https://github.com/valostra-digital/meridian-ux" target="_blank" class="docs-header__link">GitHub</a></li>
+        </ul>
+        
+        <button class="docs-header__theme-toggle" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+      <div class="docs-content__inner">
+        <!-- Hero Section -->
+        <section class="hero">
+          <div class="container">
+            <h1 class="hero__title">MERIDIAN UX</h1>
+            <p class="hero__subtitle">
+              Enterprise web components based on Ant Design principles.<br>
+              Framework-agnostic, accessible, and built with Lit.
+            </p>
+            
+            <div class="hero__actions">
+              <mx-button type="primary" size="large" href="/getting-started.html">
+                Get Started
+              </mx-button>
+              <mx-button size="large" href="https://github.com/valostra-digital/meridian-ux" target="_blank">
+                View on GitHub
+              </mx-button>
+            </div>
+            
+            <div class="hero__stats">
+              <div class="hero__stat">
+                <div class="hero__stat-value">63+</div>
+                <div class="hero__stat-label">Components</div>
+              </div>
+              <div class="hero__stat">
+                <div class="hero__stat-value">100%</div>
+                <div class="hero__stat-label">Framework Agnostic</div>
+              </div>
+              <div class="hero__stat">
+                <div class="hero__stat-value">Lit</div>
+                <div class="hero__stat-label">Powered By</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features -->
+        <section class="container" style="margin-top: 80px;">
+          <h2 class="text-center mb-xl">Why Meridian UX?</h2>
+          
+          <div class="features">
+            <div class="feature-card">
+              <div class="feature-card__icon">⚡</div>
+              <h3 class="feature-card__title">Framework Agnostic</h3>
+              <p class="feature-card__description">
+                Use with React, Vue, Angular, Svelte, or vanilla JavaScript. Works anywhere web components are supported.
+              </p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-card__icon">🎨</div>
+              <h3 class="feature-card__title">Ant Design Principles</h3>
+              <p class="feature-card__description">
+                Based on the proven design patterns from Ant Design, adapted for modern web components.
+              </p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-card__icon">♿</div>
+              <h3 class="feature-card__title">Accessible</h3>
+              <p class="feature-card__description">
+                Built with accessibility in mind. ARIA labels, keyboard navigation, and screen reader support included.
+              </p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-card__icon">🎯</div>
+              <h3 class="feature-card__title">TypeScript Support</h3>
+              <p class="feature-card__description">
+                Fully typed with TypeScript for excellent IDE support and type safety in your projects.
+              </p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-card__icon">🔧</div>
+              <h3 class="feature-card__title">Customizable</h3>
+              <p class="feature-card__description">
+                Easily theme and customize using CSS variables. Dark mode support out of the box.
+              </p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-card__icon">📦</div>
+              <h3 class="feature-card__title">Tree Shakeable</h3>
+              <p class="feature-card__description">
+                Import only what you need. Optimized bundle sizes with modern build tools.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Example -->
+        <section class="container" style="margin-top: 80px;">
+          <h2 class="text-center mb-xl">Get Started in Seconds</h2>
+          
+          <div class="demo-card">
+            <div class="demo-card__header">
+              <span class="demo-card__title">Installation & Usage</span>
+            </div>
+            <div class="demo-card__code visible">
+              <pre><code class="language-bash"># Install via npm
+npm install @meridian-ux/components
+
+# Or via yarn
+yarn add @meridian-ux/components</code></pre>
+              
+              <pre><code class="language-javascript">// Import in your app
+import '@meridian-ux/components';
+
+// Or import specific components
+import '@meridian-ux/components/mx-button';
+import '@meridian-ux/components/mx-input';</code></pre>
+              
+              <pre><code class="language-html">&lt;!-- Use in your HTML --&gt;
+&lt;mx-button type="primary"&gt;Click Me&lt;/mx-button&gt;
+&lt;mx-input placeholder="Enter text..." /&gt;
+&lt;mx-card title="Hello World"&gt;
+  &lt;p&gt;Card content goes here&lt;/p&gt;
+&lt;/mx-card&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Component Showcase -->
+        <section class="container" style="margin-top: 80px; margin-bottom: 80px;">
+          <h2 class="text-center mb-xl">Explore Components</h2>
+          
+          <div id="component-grid" class="component-grid">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="docs-footer">
+      <p>
+        Built with ❤️ by <a href="https://github.com/valostra-digital" target="_blank">Valostra Digital</a>
+        • Licensed under MIT
+      </p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script type="module" src="/scripts/main.js"></script>
+  <script type="module" src="/scripts/search.js"></script>
+  <script type="module" src="/scripts/code-copy.js"></script>
+  
+  <script>
+    // Load and display component grid
+    async function loadComponentGrid() {
+      try {
+        const response = await fetch('/data/navigation.json');
+        const data = await response.json();
+        
+        const grid = document.getElementById('component-grid');
+        const components = [];
+        
+        // Collect unique components
+        const seen = new Set();
+        Object.values(data).forEach(category => {
+          category.forEach(comp => {
+            if (!seen.has(comp.tag)) {
+              seen.add(comp.tag);
+              components.push(comp);
+            }
+          });
+        });
+        
+        // Sort alphabetically
+        components.sort((a, b) => a.name.localeCompare(b.name));
+        
+        // Render component cards with relative paths
+        grid.innerHTML = components.map(comp => {
+          const filename = comp.path.split('/').pop();
+          return `
+            <a href="/components/${filename}" class="component-card">
+              <div class="component-card__name">${comp.name}</div>
+              <div class="component-card__tag">${comp.tag}</div>
+            </a>
+          `;
+        }).join('');
+      } catch (error) {
+        console.error('Failed to load component grid:', error);
+      }
+    }
+    
+    // Load on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadComponentGrid);
+    } else {
+      loadComponentGrid();
+    }
+  </script>
+</body>
+</html>
