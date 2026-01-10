@@ -20,9 +20,7 @@
   },
   "scripts": {
     "dev": "yarn workspace @meridian-ux/components dev",
-    "build": "yarn workspace @meridian-ux/components build",
-    "build:docs": "yarn workspace @meridian-ux/components build:docs",
-    "docs:serve": "python3 -m http.server 8000"
+    "build": "yarn workspace @meridian-ux/components build"
   },
   "dependencies": {},
   "devDependencies": {}

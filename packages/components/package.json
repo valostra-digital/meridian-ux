@@ -8,7 +8,8 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./mx-theme": "./dist/mx-theme/index.js"
+    "./mx-theme": "./dist/mx-theme/index.js",
+    "./mx-button": "./dist/mx-button/index.js"
   },
   "files": [
     "dist"

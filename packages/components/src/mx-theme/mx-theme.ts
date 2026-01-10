@@ -6,8 +6,12 @@ import { generateColorVars, generateNeutralVars } from './colors.js';
 
 /**
  * Theme provider component that generates and provides design tokens
- * to all descendant Meridian components.
+ * at the :root scope, making them globally available for all Meridian components
+ * and consumer application styling.
  * 
+ * CSS variables are applied to document.documentElement (:root) to ensure
+ * they can be used in any CSS context, including consumer library styles.
+ *
  * @element mx-theme
  * 
  * @attr {string} primary-color - Primary brand color (hex). Default: #1677ff (Ant Design blue)
@@ -23,6 +27,14 @@ import { generateColorVars, generateNeutralVars } from './colors.js';
  * <mx-theme primary-color="#52c41a">
  *   <mx-button>Click me</mx-button>
  * </mx-theme>
+ *
+ * <!-- Variables are available globally in your CSS -->
+ * <style>
+ *   .my-custom-class {
+ *     color: var(--mx-color-primary);
+ *     padding: var(--mx-padding);
+ *   }
+ * </style>
  * ```
  */
 @customElement('mx-theme')
@@ -44,9 +56,19 @@ export class MXTheme extends LitElement {
    */
   private _lastPrimaryColor: string = '';
 
+  /**
+   * Store applied variable names for cleanup
+   */
+  private _appliedVars: string[] = [];
+
   connectedCallback() {
     super.connectedCallback();
     this._applyTheme();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this._cleanupTheme();
   }
 
   updated(changedProperties: Map<string, unknown>) {
@@ -84,10 +106,26 @@ export class MXTheme extends LitElement {
       ...this._generateTokenVars(),
     };
 
-    // Apply CSS variables to host element
+    // Apply CSS variables to :root for global availability
+    const root = document.documentElement;
+
+    // Store variable names for cleanup
+    this._appliedVars = Object.keys(vars);
+
     Object.entries(vars).forEach(([name, value]) => {
-      this.style.setProperty(name, String(value));
+      root.style.setProperty(name, String(value));
     });
+  }
+
+  /**
+   * Remove theme variables from :root on disconnect
+   */
+  private _cleanupTheme() {
+    const root = document.documentElement;
+    this._appliedVars.forEach(varName => {
+      root.style.removeProperty(varName);
+    });
+    this._appliedVars = [];
   }
 
   /**
